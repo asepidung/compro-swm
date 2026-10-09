@@ -1,0 +1,13 @@
+{
+  "name": "compro-swm",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Company profile PT. Santi Wijaya Meat (A4, HTML -> PDF)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "^1.56.1"
+  }
+}

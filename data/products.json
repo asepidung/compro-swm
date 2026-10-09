@@ -1,0 +1,50 @@
+[
+  { "kategori": "Prime Cuts", "judul": "Prime Cuts", "intro": "Potongan premium dari bagian tertentu sapi: empuk, juicy, dan kaya rasa. Umumnya dijadikan steak.", "items": [
+    { "nama": "Tenderloin", "id": "Has Dalam", "cocok": "Tenderloin steak, filet mignon, beef wellington" },
+    { "nama": "Striploin Whole", "id": "Has Luar Utuh", "cocok": "Steak, grill, BBQ, panggang utuh" },
+    { "nama": "Striploin Cut", "id": "Has Luar Potongan", "cocok": "Steak slice, grill, pan-seared" },
+    { "nama": "Cuberoll", "id": "Ribeye Roll", "cocok": "Ribeye steak, roast beef, grill premium" },
+    { "nama": "Spencer Roll", "id": "Iga Atas / Ribeye Roll", "cocok": "Steak, grill, yakiniku, sukiyaki, hotpot" },
+    { "nama": "New York Rib Eye", "id": "", "cocok": "Steak, grill, pan-seared" }
+  ]},
+  { "kategori": "Special Cuts", "judul": "Special Cuts", "intro": "Potongan istimewa bertulang untuk sajian restoran dan acara spesial.", "items": [
+    { "nama": "Shortloin", "id": "Pinggang Belakang Sapi", "cocok": "Steak panggang, grill, roasting" },
+    { "nama": "T-Bone", "id": "Steak Tulang T", "cocok": "Steak panggang, BBQ, grill" },
+    { "nama": "Tomahawk", "id": "", "cocok": "Steak panggang, BBQ, hidangan spesial" },
+    { "nama": "Tomahawk French", "id": "", "cocok": "Steak ala restoran, fine dining" },
+    { "nama": "Tomahawk Full", "id": "", "cocok": "BBQ, pesta, hidangan sharing" },
+    { "nama": "Tomahawk Spesial", "id": "", "cocok": "Acara spesial dan sajian eksklusif" }
+  ]},
+  { "kategori": "Secondary Cuts", "judul": "Secondary · Paha & Sampil", "intro": "Potongan serbaguna dan ekonomis, cocok untuk masakan Nusantara dan slow cooking.", "items": [
+    { "nama": "Rump", "id": "Pantat Sapi", "cocok": "Rump steak, rendang, sate, roast" },
+    { "nama": "Outside", "id": "Paha Belakang Luar", "cocok": "Rendang, semur, dendeng" },
+    { "nama": "Silverside", "id": "Paha Belakang", "cocok": "Kornet, semur, rendang, pot roast" },
+    { "nama": "Topside", "id": "Paha Belakang Atas", "cocok": "Rendang, semur, sop, pot roast" },
+    { "nama": "Knuckle", "id": "Betis Atas", "cocok": "Rendang, semur, sop, dendeng" },
+    { "nama": "Chuck Roll", "id": "Sampil", "cocok": "Rendang, semur, sop, steak tebal" }
+  ]},
+  { "kategori": "Secondary Cuts", "judul": "Secondary · Bahu & Perut", "intro": "Bahu dan perut sapi dengan rasa daging yang kuat.", "items": [
+    { "nama": "Chuck", "id": "Sampil Depan", "cocok": "Rendang, rawon, semur, sop" },
+    { "nama": "Chuck Tender", "id": "Has Dalam Bahu", "cocok": "Steak, sate, oseng, semur" },
+    { "nama": "Blade", "id": "Sampil Atas", "cocok": "Rendang, semur, osso buco, beef stew" },
+    { "nama": "Flat Iron", "id": "Top Blade Steak", "cocok": "Steak, grill, stir-fry" },
+    { "nama": "Flank Steak", "id": "Has Luar Perut", "cocok": "Steak, oseng, irisan tipis" },
+    { "nama": "Creastmeat", "id": "Sandung Lamur Atas", "cocok": "Semur, rawon, gulai, sop" }
+  ]},
+  { "kategori": "Secondary Cuts", "judul": "Secondary · Diafragma & Dada", "intro": "Otot diafragma dan dada: cepat masak atau empuk bila dimasak perlahan.", "items": [
+    { "nama": "Inside Skirt", "id": "Has Luar Diafragma", "cocok": "Fajitas, yakiniku, tumisan" },
+    { "nama": "Thin Skirt", "id": "Diafragma Tipis", "cocok": "Fajitas, tumisan cepat, grill" },
+    { "nama": "Hanging Tender", "id": "Onglet / Thick Skirt", "cocok": "Steak, grill, tumisan" },
+    { "nama": "Brisket NE", "id": "Dada Tanpa Tulang", "cocok": "Brisket BBQ, smoked brisket, corned beef" },
+    { "nama": "Brisket PE", "id": "Dada Tengah", "cocok": "Brisket BBQ, soto daging, semur" },
+    { "nama": "Brisket Pedo", "id": "Dada Depan", "cocok": "Smoked brisket, semur, sop" }
+  ]},
+  { "kategori": "Bone In & Giling", "judul": "Bone In & Giling", "intro": "Potongan bertulang untuk kaldu dan sup, serta daging giling untuk olahan.", "items": [
+    { "nama": "Backrib", "id": "Iga Belakang", "cocok": "Sop iga, iga bakar, BBQ" },
+    { "nama": "Shortrib", "id": "Iga Pendek", "cocok": "Sup iga, rawon, BBQ, braise" },
+    { "nama": "Oxtail", "id": "Ekor Sapi", "cocok": "Sop buntut, semur buntut" },
+    { "nama": "Osso Buco", "id": "Betis Melintang", "cocok": "Osso buco, sop kaki, semur" },
+    { "nama": "Marrow Bone", "id": "Tulang Sumsum", "cocok": "Sop sumsum, soto, kaldu" },
+    { "nama": "FQ 85 CL", "id": "Daging Giling ±15% lemak", "cocok": "Burger patty, bakso, sosis" }
+  ]}
+]

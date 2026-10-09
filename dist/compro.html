@@ -1,0 +1,618 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Company Profile PT. Santi Wijaya Meat</title><style>:root {
+  --gold: #f5b800;
+  --gold-soft: #fff1bf;
+  --ink: #2b2b2b;
+  --gray: #4a4a4a;
+  --line: #c9c9c9;
+  --bg-ph: #ececec;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "DejaVu Sans", Arial, sans-serif; font-size: 9.5pt; color: var(--ink); background: #888; }
+.page { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: #fff; margin: 0 auto 8mm; page-break-after: always; break-after: page; padding: 18mm 16mm 20mm; }
+@media print { body { background: none; } .page { margin: 0; } }
+.page.dark { background: #333; color: #fff; }
+
+.bar { position: absolute; left: 0; top: 0; width: 100%; height: 11mm; background: var(--gray); }
+.bar::after { content: ""; position: absolute; left: 0; top: 0; width: 62mm; height: 11mm; background: var(--gold); clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%); }
+.foot { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: #777; border-top: 1px solid var(--line); padding-top: 2mm; }
+.foot b { color: var(--ink); }
+
+h1 { font-size: 22pt; margin: 6mm 0 2mm; letter-spacing: .5px; text-transform: uppercase; }
+h1 small { display: block; font-size: 9pt; color: #777; font-weight: normal; letter-spacing: 0; text-transform: none; margin-top: 1mm; }
+h2 { font-size: 12pt; margin: 6mm 0 2mm; padding-left: 3mm; border-left: 3mm solid var(--gold); }
+p { line-height: 1.5; margin: 0 0 3mm; text-align: justify; }
+ul { margin: 0 0 3mm; padding-left: 5mm; } li { line-height: 1.5; margin-bottom: 1.2mm; }
+
+.ph { background: var(--bg-ph); border: 1.5px dashed #9a9a9a; color: #6a6a6a; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 8pt; padding: 2mm; }
+.todo { background: var(--gold-soft); border-left: 2.5mm solid var(--gold); padding: 1.5mm 3mm; font-size: 8pt; color: #5b4500; margin: 2mm 0; }
+.todo::before { content: "TODO · "; font-weight: bold; }
+.tag { display: inline-block; background: var(--gold); color: #000; font-weight: bold; font-size: 7.5pt; padding: 0.6mm 2.5mm; border-radius: 1mm; }
+
+table.kv { border-collapse: collapse; width: 100%; }
+table.kv td { padding: 1.8mm 2mm; vertical-align: top; border-bottom: 1px solid #e3e3e3; }
+table.kv td:first-child { width: 42mm; color: #666; }
+table.kv td:last-child { font-weight: bold; }
+
+.grid { display: grid; gap: 4mm; }
+.g2 { grid-template-columns: 1fr 1fr; } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); }
+.card { border: 1px solid var(--line); border-radius: 1.5mm; padding: 3mm; background: #fff; }
+.card h3 { margin: 0 0 1.5mm; font-size: 10pt; }
+.card .sub { color: #777; font-size: 7.5pt; margin-bottom: 1.5mm; }
+.card .use { font-size: 7.8pt; line-height: 1.4; }
+
+.steps { counter-reset: s; display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm; }
+.step { display: flex; gap: 2.5mm; align-items: flex-start; font-size: 8.3pt; line-height: 1.35; counter-increment: s; }
+.step::before { content: counter(s); flex: none; width: 6mm; height: 6mm; border-radius: 50%; background: var(--gold); font-weight: bold; text-align: center; line-height: 6mm; font-size: 8pt; }
+
+.tl { border-left: 2px solid var(--gold); margin-left: 3mm; padding-left: 5mm; }
+.tl .ev { position: relative; margin-bottom: 4mm; } .tl .ev::before { content: ""; position: absolute; left: -7.2mm; top: 1.3mm; width: 3mm; height: 3mm; border-radius: 50%; background: var(--gold); }
+.tl .ev b { display: block; }
+.tl .ev span { font-size: 8.5pt; color: #444; }
+
+.cover { background: #2b2b2b; color: #fff; padding: 0; }
+.cover .gold { position: absolute; inset: 0 auto 0 0; width: 100%; background: linear-gradient(135deg, var(--gold) 0 46%, transparent 46%); }
+.cover .t { position: absolute; left: 16mm; top: 28mm; }
+.cover .t .big { font-size: 38pt; font-weight: bold; line-height: 1; color: #1b1b1b; text-transform: uppercase; }
+.cover .t .nm { font-size: 14pt; font-weight: bold; color: #fff; margin-top: 4mm; }
+.cover .hero { position: absolute; left: 16mm; right: 16mm; top: 100mm; height: 120mm; }
+.cover .logo { position: absolute; left: 50%; top: 188mm; transform: translateX(-50%); width: 60mm; height: 30mm; }
+.cover .addr { position: absolute; left: 16mm; bottom: 12mm; font-size: 8pt; color: #ddd; }
+.cover .badges { position: absolute; right: 14mm; top: 12mm; display: flex; gap: 2mm; }
+.cover .badges .ph { width: 14mm; height: 14mm; border-radius: 50%; font-size: 6pt; }
+.legal-box { height: 58mm; }
+.org { display: flex; flex-direction: column; align-items: center; gap: 4mm; margin-top: 4mm; }
+.org .n { background: var(--gold); border-radius: 1.5mm; padding: 2.5mm 6mm; text-align: center; font-weight: bold; }
+.org .n small { display: block; font-weight: normal; font-size: 7.5pt; }
+.org .row { display: flex; gap: 3mm; flex-wrap: wrap; justify-content: center; }
+.org .d { border: 1.5px solid var(--gray); border-radius: 1.5mm; padding: 2mm 4mm; font-size: 8.5pt; min-width: 28mm; text-align: center; }
+</style></head><body>
+<section class="page cover" id="p1">
+  <div class="gold"></div>
+  <div class="badges"><div class="ph" style="">NKV</div><div class="ph" style="">NKV</div><div class="ph" style="">HALAL</div></div>
+  <div class="t"><div class="big">Company<br>Profile</div><div class="nm">PT. SANTI WIJAYA MEAT</div></div>
+  <div class="hero"><div class="ph" style="height:100%">FOTO HERO · sapi di padang / fasilitas RPH (landscape, 180 × 120 mm)</div></div>
+  <div class="logo"><div class="ph" style="height:100%">LOGO WIJAYA MEAT (hexagon emas)</div></div>
+  <div class="addr">Perum Asabri Blok B No. 20, RT 001/RW 005, Desa Sukasirna, Kec. Jonggol, Kab. Bogor, Jawa Barat 16830<br>www.wijayameat.co.id</div>
+</section>
+
+<section class="page " id="p2">
+  <div class="bar"></div>
+  
+  <h1>Kata Pengantar</h1>
+  <div class="grid g2" style="grid-template-columns: 62mm 1fr; align-items:start">
+    <div class="ph" style="height:80mm">FOTO OWNER<br>(portrait)</div>
+    <div>
+      <p>Salam Hormat,</p>
+      <p>Selamat datang di <b>PT. Santi Wijaya Meat</b>, tempat di mana komitmen kami untuk memenuhi kebutuhan Anda menjadi prioritas utama.</p>
+      <p>Sejak tahun 2014, ketika kami masih bernama CV. Wijaya Meat, perjalanan kami sebagai penyedia daging sapi berkualitas dimulai. Pada tahun 2020, kami melangkah lebih jauh dengan resmi menjadi <b>PT. Santi Wijaya Meat</b>, menghadirkan kualitas dan layanan yang lebih baik.</p>
+      <p>Sebagai pemilik perusahaan, saya, Santi Wijayanti Lewis, bangga dengan peran kami dalam menyediakan daging sapi berkualitas tinggi untuk berbagai kebutuhan pasar modern, sektor perhotelan, dan restoran-restoran bergengsi. Slogan kami, <i>"Committed to Meeting Your Need,"</i> mencerminkan tekad kami untuk selalu hadir dan memberikan solusi sesuai standar kualitas tertinggi.</p>
+    </div>
+  </div>
+  <p>Dalam halaman-halaman berikut, kami mengajak Anda untuk menjelajahi lebih dalam tentang perjalanan kami, nilai-nilai yang kami anut, dan bagaimana kami terus berkomitmen memberikan layanan terbaik bagi Anda, mitra berharga kami.</p>
+  <p>Terima kasih atas kepercayaan dan dukungan Anda sepanjang perjalanan kami.</p>
+  <p style="margin-top:8mm">Salam Hangat,<br><br><b>Santi Wijayanti Lewis</b><br>Pemilik PT. Santi Wijaya Meat</p>
+  <div class="todo">Teks pengantar disalin dari compro 2024 dengan koreksi tahun PT (2019 → 2020). Mohon review dan tanda tangan owner.</div>
+  <div class="ph" style="height:70mm; margin-top:6mm">FOTO PENDUKUNG (landscape): owner di peternakan / kunjungan</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Kata Pengantar · 02</span></div>
+</section>
+
+<section class="page " id="p3">
+  <div class="bar"></div>
+  
+  <h1>Sejarah Singkat<small>Perjalanan 2014 – sekarang</small></h1>
+  <p>PT. Santi Wijaya Meat pada awalnya dikenal sebagai CV Wijaya Meat sejak tahun 2014, menandai awal perjalanan kami di dunia penyediaan daging sapi berkualitas. Pada tahun 2020 perusahaan resmi berbadan hukum sebagai PT dan terus berkembang bersama mitra bisnis, hotel, dan restoran di Jabodetabek dan Jawa Barat.</p>
+  <div class="tl" style="margin-top:6mm">
+    <div class="ev"><b>2014 · CV Wijaya Meat</b><span>Awal perjalanan penyediaan daging sapi berkualitas.</span></div>
+    <div class="ev"><b>18 April 2020 · Pendirian PT</b><span>Akta Pendirian PT Santi Wijaya Meat No. 16; pengesahan Kemenkumham 27 April 2020.</span></div>
+    <div class="ev"><b>4 Mei 2020 · NIB</b><span>Nomor Induk Berusaha 0220008520949 terbit.</span></div>
+    <div class="ev"><b>17 September 2021 · NKV Gudang</b><span>NKV Gudang Berpendingin CS-3201170-027, Tingkat I (Baik Sekali).</span></div>
+    <div class="ev"><b>4 September 2023 · NKV RPH</b><span>NKV RPHR Jonggol RPHR-3201170-007, Tingkat I (Baik Sekali).</span></div>
+    <div class="ev"><b>27 Agustus 2024 · Penguatan manajemen</b><span>Rafi Bagus Purnomo bergabung sebagai Komisaris.</span></div>
+    <div class="ev"><b>16 Desember 2024 · Tanda Daftar Gudang</b><span>PB-UMKU 022000852094900000003.</span></div>
+    <div class="ev"><b>24 September 2025 · Surveilans NKV</b><span>Gudang dan RPH tetap Tingkat I (Baik Sekali).</span></div>
+    <div class="ev"><b>2026 · Sertifikat Halal & Resertifikasi NKV</b><span>Halal RPH ID00110015321510124; NKV Gudang diperbarui.</span></div>
+  </div>
+  <div class="todo">Konfirmasi: tahun/isi tonggak 2014–2019, tanggal terbit Halal RPH, tanggal NKV Gudang baru, serta tahun Tegar Beriman Award.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Sejarah & Timeline · 03</span></div>
+</section>
+
+<section class="page " id="p4">
+  <div class="bar"></div>
+  
+  <h1>Profil Perusahaan</h1>
+  <table class="kv"><tr><td>Nama Perusahaan</td><td>PT. Santi Wijaya Meat</td></tr><tr><td>Brand Product</td><td>Wijaya Meat</td></tr><tr><td>Alamat Kantor</td><td>Perum Asabri Blok B No. 20, RT 001/RW 005, Desa Sukasirna, Kec. Jonggol, Kab. Bogor, Jawa Barat 16830</td></tr><tr><td>RPH & Produksi</td><td>Jl. SMPN 01 Jonggol, Kp. Menan RT 04/RW 01, Desa Sukamaju, Kec. Jonggol, Kab. Bogor, Jawa Barat</td></tr><tr><td>Cold Storage</td><td>Perum Asabri Blok B No. 20, Sukasirna, Jonggol (NKV Gudang CS-3201170-027)</td></tr><tr><td>Akta Pendirian</td><td>Akta Pendirian No. 16, 18 April 2020 (Notaris Suparno, S.H., M.Kn)</td></tr><tr><td>NIB</td><td>0220008520949</td></tr><tr><td>NPWP</td><td>94.813.835.9-436.000</td></tr><tr><td>Sertifikat Halal PT</td><td>ID00310000134840521</td></tr><tr><td>Sertifikat Halal RPH</td><td>ID00110015321510124</td></tr><tr><td>NKV RPH</td><td>RPHR-3201170-007</td></tr><tr><td>NKV Gudang</td><td>CS-3201170-027</td></tr><tr><td>Reg. Produk Hewan</td><td>PHD320104012400241</td></tr><tr><td>Telepon</td><td>+62 813-6006-959</td></tr><tr><td>Email</td><td>official@wijayameat.co.id</td></tr><tr><td>Website</td><td>www.wijayameat.co.id</td></tr></table>
+  <div class="todo">Konfirmasi email resmi (official@ atau widi@) dan apakah NPWP boleh dicetak.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Profil Perusahaan · 04</span></div>
+</section>
+
+<section class="page " id="p5">
+  <div class="bar"></div>
+  
+  <h1>Visi & Misi</h1>
+  <h2>Visi</h2>
+  <p><i>"Menjadi perusahaan distribusi daging sapi terbaik dan terpercaya di Indonesia yang memberikan kepuasan kepada pelanggan dengan kualitas daging yang terbaik serta harga yang terjangkau."</i></p>
+  <h2>Misi</h2>
+  <ul>
+    <li>Menyediakan daging sapi segar berkualitas tinggi dan sehat untuk memenuhi kebutuhan pelanggan.</li>
+    <li>Memberikan layanan yang cepat, handal, dan profesional kepada pelanggan.</li>
+    <li>Menjalin kemitraan yang baik dengan peternak dan produsen daging sapi untuk memastikan ketersediaan pasokan yang stabil dan berkualitas.</li>
+    <li>Memastikan keamanan dan kualitas daging yang dijual dengan melakukan kontrol mutu dan keamanan pangan yang ketat.</li>
+    <li>Membangun tim yang solid, profesional, dan berdedikasi tinggi dalam memberikan layanan terbaik kepada pelanggan.</li>
+    <li>Mengembangkan teknologi dan inovasi terbaru dalam manajemen distribusi untuk meningkatkan efisiensi dan produktivitas perusahaan.</li>
+  </ul>
+  <div class="ph" style="height:80mm; margin-top:8mm">FOTO TIM (landscape): tim berseragam putih di area produksi</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Visi & Misi · 05</span></div>
+</section>
+
+<section class="page " id="p6">
+  <div class="bar"></div>
+  
+  <h1>Struktur Organisasi</h1>
+  <div class="org">
+    <div class="n">KOMISARIS<small>Rafi Bagus Purnomo</small></div>
+    <div class="n">DIREKTUR<small>Santi Wijayanti</small></div>
+    <div class="row"><div class="d">Produksi</div><div class="d">Warehouse</div><div class="d">Quality Control</div><div class="d">Marketing</div><div class="d">Operasional</div><div class="d">Finance</div><div class="d">Delivery</div></div>
+  </div>
+  <div class="todo">Diagram detail (leader dan staf per divisi) menunggu verifikasi: PDF struktur organisasi hasil ekstraksi teks berantakan. Kirim versi gambar atau konfirmasi nama per divisi.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Struktur Organisasi · 06</span></div>
+</section>
+
+<section class="page " id="p7">
+  <div class="bar"></div>
+  
+  <h1>Fasilitas<small>RPH Jonggol dan Cold Storage</small></h1>
+  <div class="grid g2">
+    <div class="card"><h3>RPH Jonggol · Produksi</h3><div class="sub">NKV RPHR-3201170-007 · Tingkat I</div><p>Jl. SMPN 01 Jonggol, Kp. Menan RT 04/RW 01, Desa Sukamaju, Kec. Jonggol, Kab. Bogor, Jawa Barat</p><div class="ph" style="height:55mm">FOTO RPH</div></div>
+    <div class="card"><h3>Cold Storage</h3><div class="sub">NKV CS-3201170-027 · Tingkat I</div><p>Perum Asabri Blok B No. 20, Sukasirna, Jonggol (NKV Gudang CS-3201170-027)</p><div class="ph" style="height:55mm">FOTO COLD STORAGE</div></div>
+  </div>
+  <h2>Spesifikasi Cold Storage</h2>
+  <table class="kv"><tr><td>Kapasitas</td><td>28 Ton</td></tr><tr><td>Luas bangunan</td><td>80 m²</td></tr><tr><td>Suhu penyimpanan</td><td>≤ -18°C</td></tr><tr><td>Perputaran produk</td><td>1–2 Ton / hari</td></tr><tr><td>Sistem</td><td>Refrigerasi mekanik (kompresor dan evaporator), suhu terkontrol otomatis</td></tr></table>
+  <div class="todo">Kapasitas dan jam operasional RPH (ekor per hari) belum ada datanya.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Fasilitas · 07</span></div>
+</section>
+
+<section class="page " id="p8">
+  <div class="bar"></div>
+  
+  <h1>Proses Produksi<small>Dari penerimaan sapi hingga pengiriman</small></h1>
+  <div class="steps"><div class="step">Penerimaan kedatangan sapi</div><div class="step">Pemberian pakan</div><div class="step">Penggiringan oleh stockman</div><div class="step">Proses pemandian</div><div class="step">Masuk jalur stunning box</div><div class="step">Proses stunning (sertifikat stunner)</div><div class="step">Proses penyembelihan oleh Juleha</div><div class="step">Waktu jeda 5–10 menit</div><div class="step">Pengangkatan dengan pengait</div><div class="step">Pemotongan kepala dan kaki depan</div><div class="step">Pengulitan, pemotongan, pemeriksaan antem mortem offal</div><div class="step">Pembelahan menggunakan splitting saw</div><div class="step">Penimbangan karkas, tenderstretch, pelayuan</div><div class="step">Persiapan pemeriksaan antem mortem dan boning</div><div class="step">Boning, penimbangan, penyimpanan di cold storage</div><div class="step">Proses pembekuan ABF/blast dan pengiriman</div></div>
+  <div class="ph" style="height:75mm; margin-top:8mm">DIAGRAM POTONGAN SAPI (siluet sapi + persentase primal: Chuck 26%, Rib 9,5%, Short Loin 8%, Sirloin 9%, Round 27%, Flank 4%, Short Plate 5,5%, Brisket 6%, Fore Shank 4%)</div>
+  <div class="todo">Langkah 'antem mortem' di compro 2024 kemungkinan typo 'ante/post-mortem'. Mohon konfirmasi urutan resmi dari SOP.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Proses Produksi · 08</span></div>
+</section>
+
+<section class="page " id="p9">
+  <div class="bar"></div>
+  
+  <h1>Jaminan Mutu & Uji Lab</h1>
+  <h2>Sistem Jaminan Keamanan Pangan</h2>
+  <ul>
+    <li>Good Warehousing Practices (GWP), Good Hygiene Practices (GHP), dan Cold Chain Management.</li>
+    <li>SOP Penerimaan, Penyimpanan FIFO/FEFO (≤ -18°C), Pengeluaran, Higiene, Biosecurity Pengangkutan, dan Rantai Dingin.</li>
+    <li>Pencatatan suhu cold room minimal 3 kali sehari dan program pengendalian hama berkala.</li>
+    <li>Setiap produk masuk disertai Certificate of Analysis (CoA) dan sertifikat veteriner dari unit asal.</li>
+  </ul>
+  <h2>Pengawasan Veteriner</h2>
+  <ul>
+    <li>Dokter hewan penanggung jawab teknis: drh. Soetrisno, MM.</li>
+    <li>Pengawasan oleh Otoritas Veteriner Dinas Perikanan dan Peternakan Kabupaten Bogor.</li>
+    <li>Surveilans NKV tahunan (Tingkat I – Baik Sekali).</li>
+  </ul>
+  <h2>Pelatihan Higiene</h2>
+  <p>Higiene sanitasi personal, penanganan rantai dingin, dan desinfeksi fasilitas bersama BBPKH Cinagara / HSC IPB University.</p>
+  <h2>Uji Laboratorium</h2>
+  <div class="ph" style="height:55mm">HASIL UJI LAB (SV dan SIG): tabel parameter, metode, hasil, nama lab</div>
+  <div class="todo">Menunggu data syarat SV dan hasil lab dari SIG. Konfirmasi juga apakah nama dokter hewan boleh dicetak.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Jaminan Mutu · 09</span></div>
+</section>
+
+<section class="page " id="p10">
+  <div class="bar"></div>
+  
+  <h1>Meet Our Experts</h1>
+  <p>Setiap anggota tim kami telah melalui serangkaian pelatihan dan memiliki sertifikasi yang mendukung keahlian mereka.</p>
+  <div class="grid g3">
+    <div class="card" style="text-align:center"><div class="ph" style="height:42mm">FOTO</div><h3 style="margin-top:2mm">Sumanta</h3><div class="sub">Product Expert</div><div class="ph" style="height:12mm; font-size:7pt">sertifikat</div></div><div class="card" style="text-align:center"><div class="ph" style="height:42mm">FOTO</div><h3 style="margin-top:2mm">Asep Saepullah</h3><div class="sub">Penyelia Halal</div><div class="ph" style="height:12mm; font-size:7pt">sertifikat</div></div><div class="card" style="text-align:center"><div class="ph" style="height:42mm">FOTO</div><h3 style="margin-top:2mm">Furqonillah</h3><div class="sub">Juleha</div><div class="ph" style="height:12mm; font-size:7pt">sertifikat</div></div><div class="card" style="text-align:center"><div class="ph" style="height:42mm">FOTO</div><h3 style="margin-top:2mm">Jaelani Aslan</h3><div class="sub">Juleha</div><div class="ph" style="height:12mm; font-size:7pt">sertifikat</div></div><div class="card" style="text-align:center"><div class="ph" style="height:42mm">FOTO</div><h3 style="margin-top:2mm">Nunu Nurjanan</h3><div class="sub">Stunner</div><div class="ph" style="height:12mm; font-size:7pt">sertifikat</div></div><div class="card" style="text-align:center"><div class="ph" style="height:42mm">FOTO</div><h3 style="margin-top:2mm">Mulyadi</h3><div class="sub">Stunner</div><div class="ph" style="height:12mm; font-size:7pt">sertifikat</div></div><div class="card" style="text-align:center"><div class="ph" style="height:42mm">FOTO</div><h3 style="margin-top:2mm">Taufiq Hidayat</h3><div class="sub">Animal Welfare Officer</div><div class="ph" style="height:12mm; font-size:7pt">sertifikat</div></div>
+  </div>
+  <div class="todo">Konfirmasi susunan tim terkini. Juleha = juru sembelih halal, Stunner = operator pemingsan hewan, AWO = Animal Welfare Officer.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Tim Ahli · 10</span></div>
+</section>
+
+<section class="page " id="p11">
+  <div class="bar"></div>
+  
+  <h1>Kebijakan Halal</h1>
+  <p>Kami berkomitmen dan bertanggung jawab untuk menghasilkan produk halal secara konsisten dan berkesinambungan dengan melakukan tindakan sebagai berikut:</p>
+  <ul>
+    <li>Menyediakan Sumber Daya Manusia dan sarana-prasarana yang mendukung pelaksanaan Proses Produk Halal (PPH).</li>
+    <li>Mematuhi peraturan perundang-undangan tentang Penyelenggaraan Jaminan Produk Halal (JPH).</li>
+    <li>Menggunakan bahan halal dan melaksanakan PPH sesuai ketentuan yang berlaku.</li>
+    <li>Memastikan bahwa Kebijakan Halal ditetapkan, difahami, dan diterapkan oleh seluruh personil RPH.</li>
+    <li>Mensosialisasikan dan mengkomunikasikan Kebijakan Halal kepada seluruh pihak terkait (stakeholder).</li>
+    <li>Melaksanakan Kebijakan Halal secara konsisten.</li>
+  </ul>
+  <h1 style="margin-top:8mm">Keberlanjutan Lingkungan</h1>
+  <p>Kami menyadari tanggung jawab terhadap lingkungan. Limbah produksi dikelola dengan sistem pengelolaan limbah terintegrasi dan dilakukan penanganan setiap waktu. Kami bekerja sama dengan Dinas Lingkungan Hidup setempat dalam prosedur perawatan dan pembuangan limbah sesuai regulasi yang berlaku.</p>
+  <div class="ph" style="height:70mm">FOTO: sapi di kandang / fasilitas pengelolaan limbah</div>
+  <div class="todo">Teks lingkungan diringkas dari compro 2024. Mohon cek apakah klaim 'campuran kimia khusus' tetap dipakai.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Halal & Lingkungan · 11</span></div>
+</section>
+
+<section class="page " id="p12">
+  <div class="bar"></div>
+  
+  <h1>Jangkauan Distribusi & Armada</h1>
+  <p>PT. Santi Wijaya Meat melayani Jabodetabek dan Jawa Barat (Pasar Tradisional, Horeka, Retail, Mitra Usaha).</p>
+  <div class="grid g2" style="margin-top:4mm">
+    <div class="ph" style="height:75mm">PETA JANGKAUAN: Jabodetabek + Jawa Barat</div>
+    <div class="ph" style="height:75mm">FOTO ARMADA: mobil box pendingin / thermoking</div>
+  </div>
+  <h2>Rantai Dingin</h2>
+  <ul>
+    <li>Pra-pendinginan boks kendaraan hingga ≤ -18°C sebelum pemuatan.</li>
+    <li>Pemuatan cepat ke armada pengangkut berpendingin dengan pencatatan log pengeluaran.</li>
+    <li>Integritas rantai dingin terjaga hingga titik akhir pelanggan.</li>
+  </ul>
+  <div class="todo">Isi: jumlah dan jenis armada, wilayah/kota layanan rinci, jadwal pengiriman.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Distribusi · 12</span></div>
+</section>
+
+<section class="page " id="p13">
+  <div class="bar"></div>
+  
+  <h1>Klien & Mitra<small>Dipercaya oleh Horeka, retail, dan mitra usaha</small></h1>
+  <div class="grid g4"><div class="ph" style="height:28mm">LOGO 1</div><div class="ph" style="height:28mm">LOGO 2</div><div class="ph" style="height:28mm">LOGO 3</div><div class="ph" style="height:28mm">LOGO 4</div><div class="ph" style="height:28mm">LOGO 5</div><div class="ph" style="height:28mm">LOGO 6</div><div class="ph" style="height:28mm">LOGO 7</div><div class="ph" style="height:28mm">LOGO 8</div><div class="ph" style="height:28mm">LOGO 9</div><div class="ph" style="height:28mm">LOGO 10</div><div class="ph" style="height:28mm">LOGO 11</div><div class="ph" style="height:28mm">LOGO 12</div><div class="ph" style="height:28mm">LOGO 13</div><div class="ph" style="height:28mm">LOGO 14</div><div class="ph" style="height:28mm">LOGO 15</div><div class="ph" style="height:28mm">LOGO 16</div></div>
+  <div class="todo">Kirim daftar nama dan logo klien/mitra yang boleh dipublikasikan, dikelompokkan Horeka / Retail / Mitra.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Klien & Mitra · 13</span></div>
+</section>
+
+<section class="page " id="p14">
+  <div class="bar"></div>
+  
+  <h1>Galeri Kegiatan<small>Pelatihan, audit, dan penghargaan</small></h1>
+  <div class="grid g2"><div class="ph" style="height:68mm">FOTO · Pelatihan</div><div class="ph" style="height:68mm">FOTO · Audit NKV</div><div class="ph" style="height:68mm">FOTO · Penghargaan</div><div class="ph" style="height:68mm">FOTO · Kunjungan mitra</div><div class="ph" style="height:68mm">FOTO · Produksi</div><div class="ph" style="height:68mm">FOTO · Pengiriman</div></div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Galeri · 14</span></div>
+</section>
+
+<section class="page " id="p15">
+  <div class="bar"></div>
+  
+  <h1>Prestasi Kami<small>Kepercayaan mitra</small></h1>
+  <div class="grid g2">
+    <div class="card"><div class="ph" style="height:55mm">FOTO · penerimaan penghargaan</div><h3 style="margin-top:2mm">Tegar Beriman Award</h3><p>Penerima penghargaan Pelopor, Penggerak Peternakan Terbaik.</p></div>
+    <div class="card"><div class="ph" style="height:55mm">FOTO · penyerahan sertifikat halal</div><h3 style="margin-top:2mm">Jaminan Halal Terbaik</h3><p>Menjadi salah satu dari 5 RPH dengan Sistem Jaminan Halal terbaik dan tercepat.</p></div>
+    <div class="card"><div class="ph" style="height:55mm">PIAGAM STUNNING</div><h3 style="margin-top:2mm">Piagam Stunning</h3><p>Sertifikasi stunning untuk kesejahteraan hewan.</p></div>
+    <div class="card"><div class="ph" style="height:55mm">NKV Tingkat I</div><h3 style="margin-top:2mm">NKV Tingkat I</h3><p>Gudang dan RPH berpredikat Baik Sekali pada surveilans 24 September 2025.</p></div>
+  </div>
+  <div class="todo">Isi: tahun dan penyelenggara tiap penghargaan, serta detail Piagam Stunning.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Penghargaan · 15</span></div>
+</section>
+
+<section class="page " id="p16">
+  <div class="bar"></div>
+  
+  <h1>Legal Company</h1>
+  <div class="grid g4"><div><div class="ph" style="height:58mm">SCAN</div><div class="tag" style="margin-top:2mm">NIB</div><div style="font-size:7pt;color:#555">0220008520949</div></div><div><div class="ph" style="height:58mm">SCAN</div><div class="tag" style="margin-top:2mm">Izin Usaha</div><div style="font-size:7pt;color:#555"></div></div><div><div class="ph" style="height:58mm">SCAN</div><div class="tag" style="margin-top:2mm">Registrasi Produk Hewan</div><div style="font-size:7pt;color:#555">PHD320104012400241</div></div><div><div class="ph" style="height:58mm">SCAN</div><div class="tag" style="margin-top:2mm">Sertifikat Merek</div><div style="font-size:7pt;color:#555"></div></div><div><div class="ph" style="height:58mm">SCAN</div><div class="tag" style="margin-top:2mm">Sertifikat Halal PT</div><div style="font-size:7pt;color:#555">ID00310000134840521</div></div><div><div class="ph" style="height:58mm">SCAN</div><div class="tag" style="margin-top:2mm">Sertifikat Halal RPH</div><div style="font-size:7pt;color:#555">ID00110015321510124</div></div><div><div class="ph" style="height:58mm">SCAN</div><div class="tag" style="margin-top:2mm">NKV Gudang Level 1</div><div style="font-size:7pt;color:#555">CS-3201170-027</div></div><div><div class="ph" style="height:58mm">SCAN</div><div class="tag" style="margin-top:2mm">NKV RPH Level 1</div><div style="font-size:7pt;color:#555">RPHR-3201170-007</div></div></div>
+  <div class="todo">Scan sertifikat sebaiknya dipotong/diburamkan pada data sensitif (QR, NIK). Konfirmasi dokumen mana yang boleh tampil.</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Legalitas · 16</span></div>
+</section>
+
+<section class="page " id="p17">
+  <div class="bar"></div>
+  
+    <h1>Prime Cuts</h1>
+    <p>Potongan premium dari bagian tertentu sapi: empuk, juicy, dan kaya rasa. Umumnya dijadikan steak.</p>
+    <div class="grid g2" style="margin-top:3mm">
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO TENDERLOIN</div>
+        <h3 style="margin-top:2mm">Tenderloin <span class="tag" style="float:right">Prime Cuts</span></h3>
+        <div class="sub">Has Dalam</div>
+        <div class="use"><b>Cocok untuk:</b> Tenderloin steak, filet mignon, beef wellington</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO STRIPLOIN WHOLE</div>
+        <h3 style="margin-top:2mm">Striploin Whole <span class="tag" style="float:right">Prime Cuts</span></h3>
+        <div class="sub">Has Luar Utuh</div>
+        <div class="use"><b>Cocok untuk:</b> Steak, grill, BBQ, panggang utuh</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO STRIPLOIN CUT</div>
+        <h3 style="margin-top:2mm">Striploin Cut <span class="tag" style="float:right">Prime Cuts</span></h3>
+        <div class="sub">Has Luar Potongan</div>
+        <div class="use"><b>Cocok untuk:</b> Steak slice, grill, pan-seared</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO CUBEROLL</div>
+        <h3 style="margin-top:2mm">Cuberoll <span class="tag" style="float:right">Prime Cuts</span></h3>
+        <div class="sub">Ribeye Roll</div>
+        <div class="use"><b>Cocok untuk:</b> Ribeye steak, roast beef, grill premium</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO SPENCER ROLL</div>
+        <h3 style="margin-top:2mm">Spencer Roll <span class="tag" style="float:right">Prime Cuts</span></h3>
+        <div class="sub">Iga Atas / Ribeye Roll</div>
+        <div class="use"><b>Cocok untuk:</b> Steak, grill, yakiniku, sukiyaki, hotpot</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO NEW YORK RIB EYE</div>
+        <h3 style="margin-top:2mm">New York Rib Eye <span class="tag" style="float:right">Prime Cuts</span></h3>
+        <div class="sub">&nbsp;</div>
+        <div class="use"><b>Cocok untuk:</b> Steak, grill, pan-seared</div>
+      </div>
+    </div>
+  
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Produk · 17</span></div>
+</section>
+
+<section class="page " id="p18">
+  <div class="bar"></div>
+  
+    <h1>Special Cuts</h1>
+    <p>Potongan istimewa bertulang untuk sajian restoran dan acara spesial.</p>
+    <div class="grid g2" style="margin-top:3mm">
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO SHORTLOIN</div>
+        <h3 style="margin-top:2mm">Shortloin <span class="tag" style="float:right">Special Cuts</span></h3>
+        <div class="sub">Pinggang Belakang Sapi</div>
+        <div class="use"><b>Cocok untuk:</b> Steak panggang, grill, roasting</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO T-BONE</div>
+        <h3 style="margin-top:2mm">T-Bone <span class="tag" style="float:right">Special Cuts</span></h3>
+        <div class="sub">Steak Tulang T</div>
+        <div class="use"><b>Cocok untuk:</b> Steak panggang, BBQ, grill</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO TOMAHAWK</div>
+        <h3 style="margin-top:2mm">Tomahawk <span class="tag" style="float:right">Special Cuts</span></h3>
+        <div class="sub">&nbsp;</div>
+        <div class="use"><b>Cocok untuk:</b> Steak panggang, BBQ, hidangan spesial</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO TOMAHAWK FRENCH</div>
+        <h3 style="margin-top:2mm">Tomahawk French <span class="tag" style="float:right">Special Cuts</span></h3>
+        <div class="sub">&nbsp;</div>
+        <div class="use"><b>Cocok untuk:</b> Steak ala restoran, fine dining</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO TOMAHAWK FULL</div>
+        <h3 style="margin-top:2mm">Tomahawk Full <span class="tag" style="float:right">Special Cuts</span></h3>
+        <div class="sub">&nbsp;</div>
+        <div class="use"><b>Cocok untuk:</b> BBQ, pesta, hidangan sharing</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO TOMAHAWK SPESIAL</div>
+        <h3 style="margin-top:2mm">Tomahawk Spesial <span class="tag" style="float:right">Special Cuts</span></h3>
+        <div class="sub">&nbsp;</div>
+        <div class="use"><b>Cocok untuk:</b> Acara spesial dan sajian eksklusif</div>
+      </div>
+    </div>
+  
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Produk · 18</span></div>
+</section>
+
+<section class="page " id="p19">
+  <div class="bar"></div>
+  
+    <h1>Secondary · Paha & Sampil</h1>
+    <p>Potongan serbaguna dan ekonomis, cocok untuk masakan Nusantara dan slow cooking.</p>
+    <div class="grid g2" style="margin-top:3mm">
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO RUMP</div>
+        <h3 style="margin-top:2mm">Rump <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Pantat Sapi</div>
+        <div class="use"><b>Cocok untuk:</b> Rump steak, rendang, sate, roast</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO OUTSIDE</div>
+        <h3 style="margin-top:2mm">Outside <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Paha Belakang Luar</div>
+        <div class="use"><b>Cocok untuk:</b> Rendang, semur, dendeng</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO SILVERSIDE</div>
+        <h3 style="margin-top:2mm">Silverside <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Paha Belakang</div>
+        <div class="use"><b>Cocok untuk:</b> Kornet, semur, rendang, pot roast</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO TOPSIDE</div>
+        <h3 style="margin-top:2mm">Topside <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Paha Belakang Atas</div>
+        <div class="use"><b>Cocok untuk:</b> Rendang, semur, sop, pot roast</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO KNUCKLE</div>
+        <h3 style="margin-top:2mm">Knuckle <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Betis Atas</div>
+        <div class="use"><b>Cocok untuk:</b> Rendang, semur, sop, dendeng</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO CHUCK ROLL</div>
+        <h3 style="margin-top:2mm">Chuck Roll <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Sampil</div>
+        <div class="use"><b>Cocok untuk:</b> Rendang, semur, sop, steak tebal</div>
+      </div>
+    </div>
+  
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Produk · 19</span></div>
+</section>
+
+<section class="page " id="p20">
+  <div class="bar"></div>
+  
+    <h1>Secondary · Bahu & Perut</h1>
+    <p>Bahu dan perut sapi dengan rasa daging yang kuat.</p>
+    <div class="grid g2" style="margin-top:3mm">
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO CHUCK</div>
+        <h3 style="margin-top:2mm">Chuck <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Sampil Depan</div>
+        <div class="use"><b>Cocok untuk:</b> Rendang, rawon, semur, sop</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO CHUCK TENDER</div>
+        <h3 style="margin-top:2mm">Chuck Tender <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Has Dalam Bahu</div>
+        <div class="use"><b>Cocok untuk:</b> Steak, sate, oseng, semur</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO BLADE</div>
+        <h3 style="margin-top:2mm">Blade <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Sampil Atas</div>
+        <div class="use"><b>Cocok untuk:</b> Rendang, semur, osso buco, beef stew</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO FLAT IRON</div>
+        <h3 style="margin-top:2mm">Flat Iron <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Top Blade Steak</div>
+        <div class="use"><b>Cocok untuk:</b> Steak, grill, stir-fry</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO FLANK STEAK</div>
+        <h3 style="margin-top:2mm">Flank Steak <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Has Luar Perut</div>
+        <div class="use"><b>Cocok untuk:</b> Steak, oseng, irisan tipis</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO CREASTMEAT</div>
+        <h3 style="margin-top:2mm">Creastmeat <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Sandung Lamur Atas</div>
+        <div class="use"><b>Cocok untuk:</b> Semur, rawon, gulai, sop</div>
+      </div>
+    </div>
+  
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Produk · 20</span></div>
+</section>
+
+<section class="page " id="p21">
+  <div class="bar"></div>
+  
+    <h1>Secondary · Diafragma & Dada</h1>
+    <p>Otot diafragma dan dada: cepat masak atau empuk bila dimasak perlahan.</p>
+    <div class="grid g2" style="margin-top:3mm">
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO INSIDE SKIRT</div>
+        <h3 style="margin-top:2mm">Inside Skirt <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Has Luar Diafragma</div>
+        <div class="use"><b>Cocok untuk:</b> Fajitas, yakiniku, tumisan</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO THIN SKIRT</div>
+        <h3 style="margin-top:2mm">Thin Skirt <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Diafragma Tipis</div>
+        <div class="use"><b>Cocok untuk:</b> Fajitas, tumisan cepat, grill</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO HANGING TENDER</div>
+        <h3 style="margin-top:2mm">Hanging Tender <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Onglet / Thick Skirt</div>
+        <div class="use"><b>Cocok untuk:</b> Steak, grill, tumisan</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO BRISKET NE</div>
+        <h3 style="margin-top:2mm">Brisket NE <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Dada Tanpa Tulang</div>
+        <div class="use"><b>Cocok untuk:</b> Brisket BBQ, smoked brisket, corned beef</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO BRISKET PE</div>
+        <h3 style="margin-top:2mm">Brisket PE <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Dada Tengah</div>
+        <div class="use"><b>Cocok untuk:</b> Brisket BBQ, soto daging, semur</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO BRISKET PEDO</div>
+        <h3 style="margin-top:2mm">Brisket Pedo <span class="tag" style="float:right">Secondary Cuts</span></h3>
+        <div class="sub">Dada Depan</div>
+        <div class="use"><b>Cocok untuk:</b> Smoked brisket, semur, sop</div>
+      </div>
+    </div>
+  
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Produk · 21</span></div>
+</section>
+
+<section class="page " id="p22">
+  <div class="bar"></div>
+  
+    <h1>Bone In & Giling</h1>
+    <p>Potongan bertulang untuk kaldu dan sup, serta daging giling untuk olahan.</p>
+    <div class="grid g2" style="margin-top:3mm">
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO BACKRIB</div>
+        <h3 style="margin-top:2mm">Backrib <span class="tag" style="float:right">Bone In & Giling</span></h3>
+        <div class="sub">Iga Belakang</div>
+        <div class="use"><b>Cocok untuk:</b> Sop iga, iga bakar, BBQ</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO SHORTRIB</div>
+        <h3 style="margin-top:2mm">Shortrib <span class="tag" style="float:right">Bone In & Giling</span></h3>
+        <div class="sub">Iga Pendek</div>
+        <div class="use"><b>Cocok untuk:</b> Sup iga, rawon, BBQ, braise</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO OXTAIL</div>
+        <h3 style="margin-top:2mm">Oxtail <span class="tag" style="float:right">Bone In & Giling</span></h3>
+        <div class="sub">Ekor Sapi</div>
+        <div class="use"><b>Cocok untuk:</b> Sop buntut, semur buntut</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO OSSO BUCO</div>
+        <h3 style="margin-top:2mm">Osso Buco <span class="tag" style="float:right">Bone In & Giling</span></h3>
+        <div class="sub">Betis Melintang</div>
+        <div class="use"><b>Cocok untuk:</b> Osso buco, sop kaki, semur</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO MARROW BONE</div>
+        <h3 style="margin-top:2mm">Marrow Bone <span class="tag" style="float:right">Bone In & Giling</span></h3>
+        <div class="sub">Tulang Sumsum</div>
+        <div class="use"><b>Cocok untuk:</b> Sop sumsum, soto, kaldu</div>
+      </div>
+      <div class="card" style="height:62mm">
+        <div class="ph" style="height:30mm">FOTO FQ 85 CL</div>
+        <h3 style="margin-top:2mm">FQ 85 CL <span class="tag" style="float:right">Bone In & Giling</span></h3>
+        <div class="sub">Daging Giling ±15% lemak</div>
+        <div class="use"><b>Cocok untuk:</b> Burger patty, bakso, sosis</div>
+      </div>
+    </div>
+  
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Produk · 22</span></div>
+</section>
+
+<section class="page " id="p23">
+  <div class="bar"></div>
+  
+  <h1>Hubungi Kami</h1>
+  <table class="kv"><tr><td>Call center</td><td>+62 813-6006-959</td></tr><tr><td>Email</td><td>official@wijayameat.co.id</td></tr><tr><td>Website</td><td>www.wijayameat.co.id</td></tr><tr><td>Kantor</td><td>Perum Asabri Blok B No. 20, RT 001/RW 005, Desa Sukasirna, Kec. Jonggol, Kab. Bogor, Jawa Barat 16830</td></tr><tr><td>RPH & Produksi</td><td>Jl. SMPN 01 Jonggol, Kp. Menan RT 04/RW 01, Desa Sukamaju, Kec. Jonggol, Kab. Bogor, Jawa Barat</td></tr></table>
+  <div class="grid g2" style="margin-top:10mm">
+    <div style="text-align:center"><div class="ph" style="height:50mm">QR KATALOG PRODUK</div><p style="text-align:center">Scan untuk katalog lengkap</p></div>
+    <div style="text-align:center"><div class="ph" style="height:50mm">QR COMPANY PROFILE</div><p style="text-align:center">Scan untuk unduh Company Profile</p></div>
+  </div>
+  <div class="todo">Konfirmasi: nomor kontak per divisi (Marketing, Legal Information, Product Knowledge) masih dipakai atau cukup satu nomor utama?</div>
+
+  <div class="foot"><span><b>PT. Santi Wijaya Meat</b> · Company Profile</span><span>Kontak · 23</span></div>
+</section>
+
+<section class="page cover" id="p24">
+  <div class="gold" style="background: linear-gradient(315deg, var(--gold) 0 40%, transparent 40%)"></div>
+  <div class="logo" style="top: 100mm; width: 70mm; height: 36mm"><div class="ph" style="height:100%">LOGO WIJAYA MEAT</div></div>
+  <div style="position:absolute; left:0; right:0; top:150mm; text-align:center"><div style="font-size:15pt;font-weight:bold">PT. SANTI WIJAYA MEAT</div><div style="font-style:italic;margin-top:3mm">"Committed to Meeting Your Need"</div></div>
+  <div class="addr" style="left:0; right:0; text-align:center">www.wijayameat.co.id · © 2026 PT. Santi Wijaya Meat</div>
+</section></body></html>
