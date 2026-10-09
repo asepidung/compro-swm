@@ -178,8 +178,8 @@ pages.push(page(5, "Visi & Misi", `
 
 // 6 — Struktur Organisasi
 const divs = [
-  ["gear", "Produksi", "Leader Produksi"], ["box", "Warehouse", "Arif Efendi"], ["flask", "Quality Control", "M. Taufik"], ["cart", "Marketing", "Yani Muryani, S.E."],
-  ["pin", "Operasional", "—"], ["coin", "Finance", "—"], ["truck", "Delivery", "—"]
+  ["gear", "Produksi", "RPH & boning"], ["box", "Warehouse", "Cold storage"], ["flask", "Quality Control", "Mutu & keamanan pangan"], ["cart", "Marketing", "Penjualan & pelanggan"],
+  ["pin", "Operasional", "Operasional harian"], ["coin", "Finance", "Keuangan"], ["truck", "Delivery", "Distribusi berpendingin"]
 ];
 pages.push(page(6, "Struktur Organisasi", `
   <div class="kick">Organisasi</div>
@@ -199,7 +199,6 @@ pages.push(page(6, "Struktur Organisasi", `
     <div class="card"><h3>Dokter hewan</h3><div class="small">drh. Soetrisno, MM<br>(kontrak 2026–2031)</div></div>
   </div>
   <div class="photo grow" ${bg("img/team-white.jpg", "background-position: 50% 40%")}></div>
-  <div style="margin-top:3mm">${D("Nama staf per divisi: sebagian contoh, mohon verifikasi")}</div>
 `, "cream"));
 
 // 7 — Fasilitas
@@ -273,11 +272,12 @@ pages.push(page(0, "Hasil Uji Lab", `
   <h1>Hasil uji <em>laboratorium</em></h1><div class="rule"></div>
   <div class="grid" style="gap:4mm">
     <div class="card" style="padding:4mm">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2mm"><h3 style="margin:0; font-size:10pt">Jeroan · ${lab.jeroan.sampel}</h3>${T(lab.jeroan.lab, "gr")}</div>
-      <table class="kv" style="font-size:7.6pt">
-        ${lab.jeroan.baris.map(r => `<tr><td style="width:62mm; color:var(--ink); font-weight:600">${r.nama}</td><td style="width:34mm">${r.hasil}</td><td style="font-weight:500; color:var(--mute); font-size:6.8pt">${r.metode}</td></tr>`).join("")}
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2mm"><h3 style="margin:0; font-size:10pt">Daging & jeroan</h3>${T(lab.bpmsph.lab, "gr")}</div>
+      <table class="kv" style="font-size:7.4pt">
+        <tr style="font-size:6.4pt; color:var(--mute); text-transform:uppercase; letter-spacing:.08em"><td style="color:var(--mute)">Parameter</td>${lab.bpmsph.kolom.map(k => `<td style="font-weight:400; color:var(--mute); width:38mm">${k.sampel}<div style="text-transform:none; letter-spacing:0; font-size:6.2pt">Terbit ${k.terbit}</div></td>`).join("")}</tr>
+        ${lab.bpmsph.baris.map(r => `<tr><td style="color:var(--ink); font-weight:600">${r.nama}<div style="font-weight:400; color:var(--mute); font-size:6pt">${r.metode}</div></td>${r.nilai.map(v => `<td>${T(v, v.startsWith("Negatif") ? "gr" : "")}</td>`).join("")}</tr>`).join("")}
       </table>
-      <div class="small" style="margin-top:1.5mm">Terbit ${lab.jeroan.terbit} · No. ${lab.jeroan.reg}. Hasil uji daging akan ditambahkan setelah laporan diterima.</div>
+      <div class="small" style="margin-top:1.5mm">Residu antibiotik: ${lab.bpmsph.catatan_residu}. No. laporan ${lab.bpmsph.kolom.map(k => k.reg).join(" · ")}.</div>
     </div>
     <div class="card" style="padding:4mm">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1mm"><h3 style="margin:0; font-size:10pt">Air proses</h3>${T("SIG · KAN", "gr")}</div>
@@ -295,7 +295,7 @@ pages.push(page(0, "Hasil Uji Lab", `
       <div class="small" style="margin-top:1.5mm">Sampling 9 Sep 2026 di ${lab.lokasi} (${lab.metode_sampling}); analisis ${lab.uji}. ALT dalam koloni per swab (karyawan, pisau) atau per 100 cm² (keranjang).</div>
     </div>
   </div>
-  <div class="grow" style="display:flex; align-items:flex-end"><p class="small" style="margin:0">Hasil hanya berlaku untuk sampel yang diuji. Program pengujian: daging dan jeroan 3 bulan sekali di BPMSPH Kabupaten Bogor; air, karyawan, dan peralatan setahun sekali di SIG; keduanya terakreditasi KAN. Laporan asli tersedia atas permintaan.</p></div>
+  <p class="small" style="margin:3mm 0 0">Hasil hanya berlaku untuk sampel yang diuji. Laporan asli tersedia atas permintaan.</p>
 `));
 
 // 10 — Tim ahli

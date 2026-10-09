@@ -1,5 +1,5 @@
 {
-  "_catatan": "Sumber: LHU SIG (order SIG.MARK.F.IX.2026.038865, 21 Sep 2026) dan LHU BPMSPH Kab. Bogor No. 180007/N327101/05/2026 (terbit 26 Mei 2026). Nama karyawan tidak dicantumkan.",
+  "_catatan": "Sumber: LHU SIG (order SIG.MARK.F.IX.2026.038865, 21 Sep 2026); LHU BPMSPH Kab. Bogor No. 040008/N327101/08/2026 (daging sapi, terbit 18 Agu 2026) dan No. 180007/N327101/05/2026 (hati sapi, terbit 26 Mei 2026). Nama karyawan tidak dicantumkan.",
   "lab": "SIG (PT Saraswanti Indo Genetech)",
   "order": "SIG.MARK.F.IX.2026.038865",
   "sampling": "9 September 2026",
@@ -78,44 +78,6 @@
       }
     ]
   },
-  "jeroan": {
-    "sampel": "Hati sapi",
-    "lab": "BPMSPH Kabupaten Bogor (KAN)",
-    "terbit": "26 Mei 2026",
-    "reg": "180007/N327101/05/2026",
-    "baris": [
-      {
-        "nama": "Salmonella spp.",
-        "hasil": "Negatif / 25 g",
-        "metode": "SNI ISO 6579-1:2017",
-        "ok": true
-      },
-      {
-        "nama": "Staphylococcus aureus",
-        "hasil": "< 1×10² CFU/g",
-        "metode": "SNI ISO 6888-1:2012",
-        "ok": true
-      },
-      {
-        "nama": "E. coli",
-        "hasil": "< 1×10¹ CFU/g",
-        "metode": "MU 7.2.1.3-1",
-        "ok": true
-      },
-      {
-        "nama": "Angka Lempeng Total",
-        "hasil": "1,3×10² CFU/g",
-        "metode": "SNI 2897:2008 butir 4.1",
-        "ok": false
-      },
-      {
-        "nama": "Residu antibiotik (aminoglikosida, beta laktam, makrolida, tetrasiklin)",
-        "hasil": "Negatif",
-        "metode": "SNI 7424:2024",
-        "ok": true
-      }
-    ]
-  },
   "air": {
     "sampel": "Air proses",
     "lab": "SIG",
@@ -153,5 +115,65 @@
         "s": "di bawah batas standar"
       }
     ]
+  },
+  "bpmsph": {
+    "lab": "BPMSPH Kabupaten Bogor (KAN)",
+    "kolom": [
+      {
+        "sampel": "Daging sapi",
+        "terbit": "18 Agustus 2026",
+        "reg": "040008/N327101/08/2026",
+        "uji": "6–14 Agustus 2026"
+      },
+      {
+        "sampel": "Hati sapi (jeroan)",
+        "terbit": "26 Mei 2026",
+        "reg": "180007/N327101/05/2026",
+        "uji": "19–25 Mei 2026"
+      }
+    ],
+    "baris": [
+      {
+        "nama": "Salmonella spp.",
+        "metode": "SNI ISO 6579-1:2017",
+        "nilai": [
+          "Negatif / 25 g",
+          "Negatif / 25 g"
+        ]
+      },
+      {
+        "nama": "Staphylococcus aureus",
+        "metode": "SNI ISO 6888-1:2012",
+        "nilai": [
+          "< 1×10² CFU/g",
+          "< 1×10² CFU/g"
+        ]
+      },
+      {
+        "nama": "Escherichia coli",
+        "metode": "MU 7.2.1.3-1",
+        "nilai": [
+          "< 1×10¹ CFU/g",
+          "< 1×10¹ CFU/g"
+        ]
+      },
+      {
+        "nama": "Angka Lempeng Total (ALT)",
+        "metode": "SNI 2897:2008 butir 4.1",
+        "nilai": [
+          "1,8×10² CFU/g",
+          "1,3×10² CFU/g"
+        ]
+      },
+      {
+        "nama": "Residu antibiotik 4 golongan",
+        "metode": "SNI 7424:2024",
+        "nilai": [
+          "Negatif",
+          "Negatif"
+        ]
+      }
+    ],
+    "catatan_residu": "Aminoglikosida, beta laktam, makrolida, tetrasiklin"
   }
 }
