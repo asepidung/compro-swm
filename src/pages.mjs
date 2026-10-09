@@ -125,7 +125,7 @@ pages.push(page(4, "Profil Perusahaan", `
     <div class="card stat"><b>2014</b><span>Berdiri sebagai CV</span></div>
     <div class="card stat"><b>${co.karyawan}</b><span>Karyawan</span></div>
     <div class="card stat"><b>28 Ton</b><span>Kapasitas cold storage</span></div>
-    <div class="card stat"><b>≤ -18°C</b><span>Suhu penyimpanan</span></div>
+    <div class="card stat"><b style="font-size:13pt; line-height:1.4">-17 s.d. -28°C</b><span>Suhu frozen (chill: 0 s.d. -5°C)</span></div>
   </div>
   <div class="grid g2" style="gap:7mm">
     <div>
@@ -211,7 +211,7 @@ pages.push(page(7, "Fasilitas", `
       <div style="padding:5mm"><span class="chip gr">NKV Tingkat I</span><h3 style="font-size:12pt; margin-top:2mm">RPH Jonggol · Produksi</h3><div class="small">${co.nkv_rph}</div><p style="margin-top:2mm; font-size:8pt">${co.alamat_rph}</p></div>
     </div>
     <div class="card" style="padding:0; overflow:hidden">
-      <div class="photo" style="height:78mm; border-radius:0; background: radial-gradient(circle at 70% 25%, #5ec0e0 0, transparent 45%), linear-gradient(160deg,#0e3a52,#12202a); display:flex; align-items:center; justify-content:center; color:#fff; flex-direction:column"><div style="color:#9ddcf0; font-size:34pt; font-weight:800; line-height:1">≤ -18°C</div><div style="font-size:8pt; letter-spacing:.25em; margin-top:2mm; color:#cdeaf5">SUHU TERKONTROL OTOMATIS</div></div>
+      <div class="photo" style="height:78mm; border-radius:0; background: radial-gradient(circle at 70% 25%, #5ec0e0 0, transparent 45%), linear-gradient(160deg,#0e3a52,#12202a); display:flex; align-items:center; justify-content:center; color:#fff; flex-direction:column"><div style="display:flex; gap:6mm; text-align:center"><div><div style="font-size:7pt; letter-spacing:.25em; color:#cdeaf5">CHILL</div><div style="color:#9ddcf0; font-size:15pt; font-weight:800; line-height:1.1; margin-top:1.5mm; white-space:nowrap">0 s.d. -5°C</div></div><div style="width:.4mm; background:#5b8aa0"></div><div><div style="font-size:7pt; letter-spacing:.25em; color:#cdeaf5">FROZEN</div><div style="color:#9ddcf0; font-size:15pt; font-weight:800; line-height:1.1; margin-top:1.5mm; white-space:nowrap">-17 s.d. -28°C</div></div></div><div style="font-size:7.4pt; letter-spacing:.25em; margin-top:5mm; color:#cdeaf5">SUHU TERKONTROL</div></div>
       <div style="padding:5mm"><span class="chip gr">NKV Tingkat I</span><h3 style="font-size:12pt; margin-top:2mm">Cold Storage</h3><div class="small">${co.nkv_gudang}</div><p style="margin-top:2mm; font-size:8pt">${co.alamat_cold_storage}</p></div>
     </div>
   </div>
@@ -249,7 +249,7 @@ pages.push(page(9, "Jaminan Mutu", `
   <h1>Aman, higienis, <em>terlacak</em></h1><div class="rule"></div>
   <div class="grid g3" style="margin: 4mm 0 6mm">
     <div class="card"><div style="color:var(--gold-d)">${ic("shield")}</div><h3 style="margin-top:2mm">GWP · GHP</h3><p class="small">Good Warehousing Practices dan Good Hygiene Practices pada seluruh area gudang dan RPH.</p></div>
-    <div class="card"><div style="color:var(--gold-d)">${ic("snow")}</div><h3 style="margin-top:2mm">Rantai dingin</h3><p class="small">Suhu ≤ -18°C dicatat 3 kali sehari. Kedatangan produk ditolak jika suhu > -15°C.</p></div>
+    <div class="card"><div style="color:var(--gold-d)">${ic("snow")}</div><h3 style="margin-top:2mm">Rantai dingin</h3><p class="small">Chill 0 s.d. -5°C dan frozen -17 s.d. -28°C. Suhu dicatat 3 kali sehari.</p></div>
     <div class="card"><div style="color:var(--gold-d)">${ic("award")}</div><h3 style="margin-top:2mm">Veteriner</h3><p class="small">Pengawasan Otoritas Veteriner. Dokter hewan penanggung jawab teknis: drh. Soetrisno, MM.</p></div>
   </div>
   <h2>Program uji laboratorium</h2>
@@ -268,7 +268,7 @@ pages.push(page(9, "Jaminan Mutu", `
   <p class="small">Setiap produk masuk disertai Certificate of Analysis (CoA) dan sertifikat veteriner dari unit asal. Hasil uji terbaru tersedia atas permintaan.</p>
   <h2 style="margin-top:6mm">Alur penyimpanan gudang berpendingin</h2>
   <div style="display:flex; gap:2mm; align-items:stretch">
-    ${["Penerimaan & cek dokumen", "Bongkar cepat di anteroom", "Penimbangan & pelabelan", "Penyimpanan ≤ -18°C", "Monitoring suhu", "Dispatch FIFO", "Muat armada pendingin"].map((t, i) => `<div class="card" style="flex:1; padding:3mm 2mm; text-align:center"><div class="num" style="margin:0 auto 2mm; width:7mm; height:7mm; font-size:7.5pt">${i + 1}</div><div style="font-size:6.8pt; line-height:1.35; font-weight:600">${t}</div></div>`).join("")}
+    ${["Penerimaan & cek dokumen", "Bongkar cepat di anteroom", "Penimbangan & pelabelan", "Penyimpanan chill / frozen", "Monitoring suhu", "Dispatch FIFO", "Muat armada pendingin"].map((t, i) => `<div class="card" style="flex:1; padding:3mm 2mm; text-align:center"><div class="num" style="margin:0 auto 2mm; width:7mm; height:7mm; font-size:7.5pt">${i + 1}</div><div style="font-size:6.8pt; line-height:1.35; font-weight:600">${t}</div></div>`).join("")}
   </div>
   <div class="photo grow" ${bg("img/team-white.jpg", "background-position: 50% 12%")}></div>
 `));
@@ -330,11 +330,11 @@ pages.push(page(12, "Distribusi", `
     <div class="card stat"><b>${co.armada}</b><span>Unit armada berpendingin</span></div>
     <div class="card stat"><b>${clients.provinsi}+</b><span>Provinsi terlayani</span></div>
     <div class="card stat"><b>1–2 Ton</b><span>Perputaran harian</span></div>
-    <div class="card stat"><b>≤ -18°C</b><span>Suhu saat muat</span></div>
+    <div class="card stat"><b style="font-size:13pt; line-height:1.4">-17 s.d. -28°C</b><span>Suhu frozen saat muat</span></div>
   </div>
   <div class="grid g2" style="margin-top:6mm; gap:6mm">
     <div><h2>Standar pengiriman</h2>
-      ${["Pra-pendinginan boks kendaraan hingga ≤ -18°C sebelum muat", "Pemuatan cepat ke mobil box pendingin / thermoking", "Surat jalan dan log pengeluaran barang tercatat", "Integritas rantai dingin terjaga hingga titik akhir"].map(t => `<div style="display:flex; gap:3mm; margin-bottom:2.4mm; font-size:8.3pt; line-height:1.45"><span style="color:var(--gold-d)">${ic("truck")}</span>${t}</div>`).join("")}
+      ${["Pra-pendinginan boks sesuai produk (chill 0 s.d. -5°C, frozen -17 s.d. -28°C) sebelum muat", "Pemuatan cepat ke mobil box pendingin / thermoking", "Surat jalan dan log pengeluaran barang tercatat", "Integritas rantai dingin terjaga hingga titik akhir"].map(t => `<div style="display:flex; gap:3mm; margin-bottom:2.4mm; font-size:8.3pt; line-height:1.45"><span style="color:var(--gold-d)">${ic("truck")}</span>${t}</div>`).join("")}
     </div>
     <div><h2>Segmen pelanggan</h2>
       <span class="chip">Horeka</span><span class="chip">Retail</span><span class="chip">Pasar tradisional</span><span class="chip">Mitra usaha</span><span class="chip">Pengolah makanan</span>

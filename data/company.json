@@ -27,8 +27,10 @@
   "cold_storage": {
     "kapasitas": "28 Ton",
     "luas": "80 m²",
-    "suhu": "≤ -18°C",
-    "perputaran": "1–2 Ton / hari"
+    "suhu": "Chill 0 s.d. -5°C · Frozen -17 s.d. -28°C",
+    "perputaran": "1–2 Ton / hari",
+    "suhu_chill": "0 s.d. -5°C",
+    "suhu_frozen": "-17 s.d. -28°C"
   },
   "karyawan": 12,
   "pasar": "Hampir seluruh Indonesia (Pasar Tradisional, Horeka, Retail, Mitra Usaha)",
