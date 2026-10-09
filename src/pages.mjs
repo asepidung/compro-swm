@@ -252,17 +252,25 @@ pages.push(page(9, "Jaminan Mutu", `
     <div class="card"><div style="color:var(--gold-d)">${ic("snow")}</div><h3 style="margin-top:2mm">Rantai dingin</h3><p class="small">Suhu ≤ -18°C dicatat 3 kali sehari. Kedatangan produk ditolak jika suhu > -15°C.</p></div>
     <div class="card"><div style="color:var(--gold-d)">${ic("award")}</div><h3 style="margin-top:2mm">Veteriner</h3><p class="small">Pengawasan Otoritas Veteriner. Dokter hewan penanggung jawab teknis: drh. Soetrisno, MM.</p></div>
   </div>
-  <h2>Uji laboratorium ${D("Hasil contoh")}</h2>
+  <h2>Program uji laboratorium</h2>
+  <div class="grid g2" style="gap:4mm; margin-bottom:3mm">
+    <div class="card" style="border-top:2mm solid var(--gold)"><div style="display:flex; gap:3mm; align-items:center; color:var(--gold-d)">${ic("flask")}<span class="chip">3 bulan sekali</span></div><h3 style="margin-top:2mm; font-size:10.5pt">Daging & jeroan</h3><p class="small" style="margin:0">Diuji di <b>BPMSPH Kabupaten Bogor</b>, laboratorium penguji terakreditasi KAN.</p></div>
+    <div class="card" style="border-top:2mm solid var(--green)"><div style="display:flex; gap:3mm; align-items:center; color:var(--green)">${ic("flask")}<span class="chip gr">Setahun sekali</span></div><h3 style="margin-top:2mm; font-size:10.5pt">Air, karyawan & peralatan</h3><p class="small" style="margin:0">Diuji di <b>SIG</b>, laboratorium penguji terakreditasi KAN.</p></div>
+  </div>
   <table class="kv" style="margin-bottom:3mm">
-    <tr style="font-size:7pt; color:var(--mute); text-transform:uppercase; letter-spacing:.1em"><td style="color:var(--mute)">Parameter</td><td style="width:40mm; font-weight:400; color:var(--mute)">Batas (SNI 7388:2009)</td><td style="width:34mm; font-weight:400; color:var(--mute)">Hasil</td></tr>
-    ${dummy.lab.map(r => `<tr><td style="color:var(--ink); font-weight:600">${r[0]}</td><td style="font-weight:500">${r[1]}</td><td><span class="chip gr">${r[2]}</span></td></tr>`).join("")}
+    <tr style="font-size:7pt; color:var(--mute); text-transform:uppercase; letter-spacing:.1em"><td style="color:var(--mute)">Objek uji</td><td style="width:42mm; font-weight:400; color:var(--mute)">Frekuensi</td><td style="width:62mm; font-weight:400; color:var(--mute)">Laboratorium</td></tr>
+    <tr><td style="color:var(--ink); font-weight:600">Daging</td><td>3 bulan sekali</td><td>BPMSPH Kab. Bogor (KAN)</td></tr>
+    <tr><td style="color:var(--ink); font-weight:600">Jeroan</td><td>3 bulan sekali</td><td>BPMSPH Kab. Bogor (KAN)</td></tr>
+    <tr><td style="color:var(--ink); font-weight:600">Air</td><td>Setahun sekali</td><td>SIG (KAN)</td></tr>
+    <tr><td style="color:var(--ink); font-weight:600">Karyawan</td><td>Setahun sekali</td><td>SIG (KAN)</td></tr>
+    <tr><td style="color:var(--ink); font-weight:600">Peralatan</td><td>Setahun sekali</td><td>SIG (KAN)</td></tr>
   </table>
-  <p class="small">Hasil di atas adalah contoh format. Isi dengan hasil laboratorium resmi (SV dan SIG) sebelum dipublikasikan. Setiap produk masuk disertai Certificate of Analysis (CoA) dan sertifikat veteriner dari unit asal.</p>
+  <p class="small">Setiap produk masuk disertai Certificate of Analysis (CoA) dan sertifikat veteriner dari unit asal. Hasil uji terbaru tersedia atas permintaan.</p>
   <h2 style="margin-top:6mm">Alur penyimpanan gudang berpendingin</h2>
   <div style="display:flex; gap:2mm; align-items:stretch">
     ${["Penerimaan & cek dokumen", "Bongkar cepat di anteroom", "Penimbangan & pelabelan", "Penyimpanan ≤ -18°C", "Monitoring suhu", "Dispatch FIFO", "Muat armada pendingin"].map((t, i) => `<div class="card" style="flex:1; padding:3mm 2mm; text-align:center"><div class="num" style="margin:0 auto 2mm; width:7mm; height:7mm; font-size:7.5pt">${i + 1}</div><div style="font-size:6.8pt; line-height:1.35; font-weight:600">${t}</div></div>`).join("")}
   </div>
-  <div class="photo grow" ${bg("img/team-white.jpg", "background-position: 50% 35%")}></div>
+  <div class="photo grow" ${bg("img/team-white.jpg", "background-position: 50% 12%")}></div>
 `));
 
 // 10 — Tim ahli
@@ -308,19 +316,19 @@ pages.push(page(11, "Halal & Lingkungan", `
 const dest = dummy.wilayah;
 pages.push(page(12, "Distribusi", `
   <div class="kick">Distribusi & armada</div>
-  <h1>Menjangkau <em>Jabodetabek</em> & Jawa Barat</h1><div class="rule"></div>
-  ${D("Jumlah armada & wilayah: contoh")}
+  <h1>Menjangkau <em>hampir seluruh Indonesia</em></h1><div class="rule"></div>
+  ${D("Armada: cek ulang · Daftar wilayah di diagram: ilustrasi")}
   <div class="card" style="margin-top:4mm; padding:0; overflow:hidden; background:linear-gradient(160deg,#fff,#f6efde)">
     <svg viewBox="0 0 180 120" style="width:100%; display:block">
       ${dest.map((d) => `<line x1="90" y1="62" x2="${d.x}" y2="${d.y}" stroke="#f4b223" stroke-width="1.2" stroke-dasharray="3 2"/>`).join("")}
-      ${dest.map((d) => `<circle cx="${d.x}" cy="${d.y}" r="4.6" fill="#2a2725"/><text x="${d.x}" y="${d.y + 11}" text-anchor="middle" font-size="5.2" font-weight="700" fill="#1d1b19" font-family="PJS">${d.n}</text>`).join("")}
+      ${dest.map((d) => `<circle cx="${d.x}" cy="${d.y}" r="${d.core ? 6 : 4.2}" fill="${d.core ? "#f4b223" : "#2a2725"}" stroke="#2a2725" stroke-width="${d.core ? 1.4 : 0}"/><text x="${d.x}" y="${d.y + (d.core ? 12 : 10)}" text-anchor="middle" font-size="5.2" font-weight="${d.core ? 800 : 700}" fill="#1d1b19" font-family="PJS">${d.n}</text>`).join("")}
       <circle cx="90" cy="62" r="9" fill="#f4b223"/><circle cx="90" cy="62" r="3.2" fill="#1d1b19"/>
       <text x="90" y="82" text-anchor="middle" font-size="6.2" font-weight="800" fill="#1d1b19" font-family="PJS">RPH Jonggol</text>
     </svg>
   </div>
   <div class="grid g4" style="margin-top:5mm">
     <div class="card stat"><b>${dummy.armada}</b><span>Unit armada berpendingin</span></div>
-    <div class="card stat"><b>${dest.length}</b><span>Wilayah layanan utama</span></div>
+    <div class="card stat"><b>Nasional</b><span>Hampir seluruh Indonesia</span></div>
     <div class="card stat"><b>1–2 Ton</b><span>Perputaran harian</span></div>
     <div class="card stat"><b>≤ -18°C</b><span>Suhu saat muat</span></div>
   </div>

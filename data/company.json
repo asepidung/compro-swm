@@ -24,16 +24,43 @@
   "nkv_rph": "RPHR-3201170-007",
   "nkv_gudang": "CS-3201170-027",
   "reg_produk": "PHD320104012400241",
-  "cold_storage": { "kapasitas": "28 Ton", "luas": "80 m²", "suhu": "≤ -18°C", "perputaran": "1–2 Ton / hari" },
+  "cold_storage": {
+    "kapasitas": "28 Ton",
+    "luas": "80 m²",
+    "suhu": "≤ -18°C",
+    "perputaran": "1–2 Ton / hari"
+  },
   "karyawan": 12,
-  "pasar": "Jabodetabek dan Jawa Barat (Pasar Tradisional, Horeka, Retail, Mitra Usaha)",
+  "pasar": "Hampir seluruh Indonesia (Pasar Tradisional, Horeka, Retail, Mitra Usaha)",
   "tim": [
-    { "nama": "Sumanta", "jabatan": "Product Expert" },
-    { "nama": "Asep Saepullah", "jabatan": "Penyelia Halal" },
-    { "nama": "Furqonillah", "jabatan": "Juleha" },
-    { "nama": "Jaelani Aslan", "jabatan": "Juleha" },
-    { "nama": "Nunu Nurjanan", "jabatan": "Stunner" },
-    { "nama": "Mulyadi", "jabatan": "Stunner" },
-    { "nama": "Taufiq Hidayat", "jabatan": "Animal Welfare Officer" }
-  ]
+    {
+      "nama": "Sumanta",
+      "jabatan": "Product Expert"
+    },
+    {
+      "nama": "Asep Saepullah",
+      "jabatan": "Penyelia Halal"
+    },
+    {
+      "nama": "Furqonillah",
+      "jabatan": "Juleha"
+    },
+    {
+      "nama": "Jaelani Aslan",
+      "jabatan": "Juleha"
+    },
+    {
+      "nama": "Nunu Nurjanan",
+      "jabatan": "Stunner"
+    },
+    {
+      "nama": "Mulyadi",
+      "jabatan": "Stunner"
+    },
+    {
+      "nama": "Taufiq Hidayat",
+      "jabatan": "Animal Welfare Officer"
+    }
+  ],
+  "armada": 5
 }
