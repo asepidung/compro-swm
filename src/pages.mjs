@@ -5,6 +5,7 @@ const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url)));
 const co = read("../data/company.json");
 const products = read("../data/products.json");
 const clients = read("../data/clients.json");
+const lab = read("../data/lab.json");
 
 const A = (p) => `../assets/${p}`;
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -36,14 +37,14 @@ const I = {
 };
 const ic = (n, cls = "") => `<svg class="ico ${cls}" viewBox="0 0 24 24">${I[n]}</svg>`;
 
-const page = (n, section, body, cls = "") => `
+const pages = [];
+const page = (_n, section, body, cls = "") => { const n = pages.length + 1; return `
 <section class="page ${cls}" id="p${n}">
   <div class="hd"><span><i></i>${section}</span><img src="${A("logo/wijaya-yellow.png")}" alt=""></div>
   <div class="pg">${body}</div>
   <div class="ft"><span><b>${co.nama}</b> · Company Profile</span><span class="no">${String(n).padStart(2, "0")} / 24</span></div>
-</section>`;
+</section>`; };
 
-const pages = [];
 
 // 1 — Cover
 pages.push(`
@@ -257,20 +258,44 @@ pages.push(page(9, "Jaminan Mutu", `
     <div class="card" style="border-top:2mm solid var(--gold)"><div style="display:flex; gap:3mm; align-items:center; color:var(--gold-d)">${ic("flask")}<span class="chip">3 bulan sekali</span></div><h3 style="margin-top:2mm; font-size:10.5pt">Daging & jeroan</h3><p class="small" style="margin:0">Diuji di <b>BPMSPH Kabupaten Bogor</b>, laboratorium penguji terakreditasi KAN.</p></div>
     <div class="card" style="border-top:2mm solid var(--green)"><div style="display:flex; gap:3mm; align-items:center; color:var(--green)">${ic("flask")}<span class="chip gr">Setahun sekali</span></div><h3 style="margin-top:2mm; font-size:10.5pt">Air, karyawan & peralatan</h3><p class="small" style="margin:0">Diuji di <b>SIG</b>, laboratorium penguji terakreditasi KAN.</p></div>
   </div>
-  <table class="kv" style="margin-bottom:3mm">
-    <tr style="font-size:7pt; color:var(--mute); text-transform:uppercase; letter-spacing:.1em"><td style="color:var(--mute)">Objek uji</td><td style="width:42mm; font-weight:400; color:var(--mute)">Frekuensi</td><td style="width:62mm; font-weight:400; color:var(--mute)">Laboratorium</td></tr>
-    <tr><td style="color:var(--ink); font-weight:600">Daging</td><td>3 bulan sekali</td><td>BPMSPH Kab. Bogor (KAN)</td></tr>
-    <tr><td style="color:var(--ink); font-weight:600">Jeroan</td><td>3 bulan sekali</td><td>BPMSPH Kab. Bogor (KAN)</td></tr>
-    <tr><td style="color:var(--ink); font-weight:600">Air</td><td>Setahun sekali</td><td>SIG (KAN)</td></tr>
-    <tr><td style="color:var(--ink); font-weight:600">Karyawan</td><td>Setahun sekali</td><td>SIG (KAN)</td></tr>
-    <tr><td style="color:var(--ink); font-weight:600">Peralatan</td><td>Setahun sekali</td><td>SIG (KAN)</td></tr>
-  </table>
-  <p class="small">Setiap produk masuk disertai Certificate of Analysis (CoA) dan sertifikat veteriner dari unit asal. Hasil uji terbaru tersedia atas permintaan.</p>
-  <h2 style="margin-top:6mm">Alur penyimpanan gudang berpendingin</h2>
+  <p class="small">Setiap produk masuk disertai Certificate of Analysis (CoA) dan sertifikat veteriner dari unit asal.</p>
+  <h2 style="margin-top:5mm">Alur penyimpanan gudang berpendingin</h2>
   <div style="display:flex; gap:2mm; align-items:stretch">
     ${["Penerimaan & cek dokumen", "Bongkar cepat di anteroom", "Penimbangan & pelabelan", "Penyimpanan chill / frozen", "Monitoring suhu", "Dispatch FIFO", "Muat armada pendingin"].map((t, i) => `<div class="card" style="flex:1; padding:3mm 2mm; text-align:center"><div class="num" style="margin:0 auto 2mm; width:7mm; height:7mm; font-size:7.5pt">${i + 1}</div><div style="font-size:6.8pt; line-height:1.35; font-weight:600">${t}</div></div>`).join("")}
   </div>
   <div class="photo grow" ${bg("img/team-white.jpg", "background-position: 50% 12%")}></div>
+`));
+
+// 9b — Hasil Uji Laboratorium
+const T = (v, cls = "") => `<span class="chip ${cls}" style="margin:0">${v}</span>`;
+pages.push(page(0, "Hasil Uji Lab", `
+  <div class="kick">Transparansi mutu</div>
+  <h1>Hasil uji <em>laboratorium</em></h1><div class="rule"></div>
+  <div class="grid" style="gap:4mm">
+    <div class="card" style="padding:4mm">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2mm"><h3 style="margin:0; font-size:10pt">Jeroan · ${lab.jeroan.sampel}</h3>${T(lab.jeroan.lab, "gr")}</div>
+      <table class="kv" style="font-size:7.6pt">
+        ${lab.jeroan.baris.map(r => `<tr><td style="width:62mm; color:var(--ink); font-weight:600">${r.nama}</td><td style="width:34mm">${r.hasil}</td><td style="font-weight:500; color:var(--mute); font-size:6.8pt">${r.metode}</td></tr>`).join("")}
+      </table>
+      <div class="small" style="margin-top:1.5mm">Terbit ${lab.jeroan.terbit} · No. ${lab.jeroan.reg}. Hasil uji daging akan ditambahkan setelah laporan diterima.</div>
+    </div>
+    <div class="card" style="padding:4mm">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1mm"><h3 style="margin:0; font-size:10pt">Air proses</h3>${T("SIG · KAN", "gr")}</div>
+      <div class="small" style="margin-bottom:2.5mm">Standar acuan: ${lab.air.std}. ${lab.air.tgl}.</div>
+      <div class="grid g3" style="gap:2.5mm">
+        ${lab.air.tiles.map(t => `<div style="background:var(--cream); border-radius:2.5mm; padding:2.6mm 3mm"><div style="font-size:6.6pt; color:var(--mute); line-height:1.3">${t.p}</div><div style="font-weight:800; font-size:9.4pt; margin:.6mm 0">${t.v}</div><div style="font-size:6.4pt; color:var(--green); font-weight:700">${t.s}</div></div>`).join("")}
+      </div>
+    </div>
+    <div class="card" style="padding:4mm">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2mm"><h3 style="margin:0; font-size:10pt">${lab.permukaan.judul}</h3>${T("SIG · KAN", "gr")}</div>
+      <table class="kv" style="font-size:7.4pt">
+        <tr style="font-size:6.4pt; color:var(--mute); text-transform:uppercase; letter-spacing:.08em"><td style="color:var(--mute)">Parameter</td>${lab.permukaan.kolom.map(k => `<td style="font-weight:400; color:var(--mute)">${k}</td>`).join("")}</tr>
+        ${lab.permukaan.baris.map(r => `<tr><td style="color:var(--ink); font-weight:600; width:38mm">${r.nama}<div style="font-weight:400; color:var(--mute); font-size:6pt">${r.metode}</div></td>${r.nilai.map(v => `<td>${T(v, v === "Negatif" ? "gr" : "")}</td>`).join("")}</tr>`).join("")}
+      </table>
+      <div class="small" style="margin-top:1.5mm">Sampling 9 Sep 2026 di ${lab.lokasi} (${lab.metode_sampling}); analisis ${lab.uji}. ALT dalam koloni per swab (karyawan, pisau) atau per 100 cm² (keranjang).</div>
+    </div>
+  </div>
+  <div class="grow" style="display:flex; align-items:flex-end"><p class="small" style="margin:0">Hasil hanya berlaku untuk sampel yang diuji. Program pengujian: daging dan jeroan 3 bulan sekali di BPMSPH Kabupaten Bogor; air, karyawan, dan peralatan setahun sekali di SIG; keduanya terakreditasi KAN. Laporan asli tersedia atas permintaan.</p></div>
 `));
 
 // 10 — Tim ahli
@@ -412,19 +437,19 @@ pages.push(page(16, "Legalitas", `
 `, "cream"));
 
 // 17–22 — Produk
-const bands = ["img/ribeye-pair.jpg", "img/tbone-dark.jpg", "img/beef-cut-board.jpg", "img/meat-closeup.jpg", "img/rib-herbs.jpg", "img/steak-board.jpg"];
+const bands = ["img/ribeye-pair.jpg", "img/tbone-dark.jpg", "img/beef-cut-board.jpg", "img/meat-closeup.jpg", "img/rib-herbs.jpg"];
 let pn = 0;
 products.forEach((grp, gi) => {
   const n = 17 + gi;
   pages.push(page(n, "Produk", `
     <div class="pband"><div class="photo" ${bg(bands[gi], "position:absolute; inset:0; border-radius:0")}></div><div class="ov"></div>
-      <div class="tx"><div class="kick" style="color:var(--gold)">Katalog produk · ${gi + 1}/6</div><h1>${grp.judul}</h1><p>${grp.intro}</p></div></div>
+      <div class="tx"><div class="kick" style="color:var(--gold)">Katalog produk · ${gi + 1}/5</div><h1>${grp.judul}</h1><p>${grp.intro}</p></div></div>
     <div class="grid g2" style="gap:4mm">
       ${grp.items.map(p => { const f = `products/${slug(p.nama)}.jpg`; pn++; return `
         <div class="pcard"><div class="im ${has(f) ? "" : "ph"}" ${has(f) ? bg(f) : ""}><div class="num">${pn}</div></div>
           <div class="bd"><h3>${p.nama}</h3><div class="id">${p.id || "&nbsp;"}</div><div class="u"><span class="chip">${grp.kategori}</span><br><b>Cocok untuk:</b> ${p.cocok}</div></div></div>`; }).join("")}
     </div>
-    ${gi === 5 ? `<p class="small" style="margin-top:3mm">Katalog lengkap (Konro, Neckbone, Backbone, Shank, Intercostal, dan lainnya) tersedia melalui QR di halaman kontak.</p>` : ""}
+    ${gi === 4 ? `<p class="small" style="margin-top:3mm">Katalog lengkap (Konro, Neckbone, Backbone, Shank, Intercostal, dan lainnya) tersedia melalui QR di halaman kontak.</p>` : ""}
   `, gi % 2 ? "cream" : ""));
 });
 
