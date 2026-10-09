@@ -9,8 +9,10 @@ Company profile A4 (24 halaman, 1 halaman per muka). Sumber HTML/CSS yang dirend
 | `data/company.json` | Data perusahaan (sumber tunggal, ubah di sini) |
 | `data/products.json` | Produk unggulan halaman 17–22 |
 | `src/pages.mjs` | Isi 24 halaman |
-| `src/styles.css` | Gaya A4 (kerangka/wireframe) |
-| `build.mjs` | Render `dist/compro.html` dan `dist/compro-kerangka.pdf` |
+| `data/dummy.json` | Data contoh (klien, armada, wilayah, hasil lab) — ganti sebelum cetak |
+| `src/styles.css` | Gaya A4 (font Plus Jakarta Sans, motif hexagon) |
+| `assets/` | Logo, foto, scan sertifikat, font |
+| `build.mjs` | Render `dist/compro.html` dan `dist/compro.pdf` |
 
 ## Build
 
@@ -27,6 +29,12 @@ Chromium dicari lewat `PLAYWRIGHT_BROWSERS_PATH`; atau set `CHROMIUM_PATH`.
 
 Total tetap kelipatan 4. Halaman produk (17–22) adalah penyangga; kalau halaman depan bertambah, halaman produk berkurang.
 
+## Foto
+
+- Foto produk: taruh `assets/products/<slug-nama>.jpg` (mis. `tenderloin.jpg`); otomatis menggantikan placeholder.
+- Foto tim: `assets/team/<slug-nama>.jpg` (mis. `sumanta.jpg`).
+- Foto yang ada sekarang diambil dari PDF compro lama (resolusi rendah, cukup untuk layar). Untuk cetak, ganti dengan foto asli resolusi tinggi (target 300 dpi).
+
 ## Status
 
-Tahap kerangka: layout kasar, teks asli di mana datanya sudah terverifikasi, kotak abu-abu untuk foto, dan label `TODO` kuning untuk data yang masih ditunggu. Desain final (warna, tipografi, foto) menyusul.
+Desain v1: semua 24 halaman terisi. Label merah "DATA CONTOH" menandai data dummy yang harus diganti (klien, armada, wilayah, hasil lab, testimoni, tautan QR).

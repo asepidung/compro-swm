@@ -10,7 +10,8 @@ writeFileSync("dist/compro.html", html);
 
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const page = await browser.newPage();
-await page.setContent(html, { waitUntil: "load" });
-await page.pdf({ path: "dist/compro-kerangka.pdf", format: "A4", printBackground: true, preferCSSPageSize: true });
+await page.goto("file://" + process.cwd() + "/dist/compro.html", { waitUntil: "load" });
+await page.evaluate(() => document.fonts.ready);
+await page.pdf({ path: "dist/compro.pdf", format: "A4", printBackground: true, preferCSSPageSize: true });
 await browser.close();
-console.log(`OK: ${pages.length} halaman -> dist/compro-kerangka.pdf`);
+console.log(`OK: ${pages.length} halaman -> dist/compro.pdf`);

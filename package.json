@@ -8,6 +8,8 @@
     "build": "node build.mjs"
   },
   "dependencies": {
-    "playwright-core": "^1.56.1"
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "playwright-core": "^1.56.1",
+    "qrcode": "^1.5.4"
   }
 }

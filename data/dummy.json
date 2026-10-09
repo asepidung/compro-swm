@@ -1,0 +1,22 @@
+{
+  "_catatan": "DATA CONTOH. Ganti dengan data sebenarnya sebelum dicetak.",
+  "armada": 8,
+  "wilayah": [
+    { "n": "Bogor", "x": 62, "y": 98 }, { "n": "Depok", "x": 40, "y": 60 }, { "n": "Jakarta", "x": 32, "y": 28 },
+    { "n": "Bekasi", "x": 82, "y": 18 }, { "n": "Tangerang", "x": 24, "y": 46 }, { "n": "Bandung", "x": 148, "y": 98 },
+    { "n": "Karawang", "x": 138, "y": 30 }, { "n": "Cianjur", "x": 132, "y": 68 }
+  ],
+  "klien": [
+    { "grup": "Hotel & Restoran (Horeka)", "items": ["Hotel Nusantara", "Resto Sedap Rasa", "Grand Boga Catering", "Steak Corner", "Sate Maranggi Haji", "Bakso Mantap", "Dapur Selera", "Warung Rawon Jaya"] },
+    { "grup": "Retail & Pasar Modern", "items": ["Fresh Mart", "Super Hemat", "Pasar Segar Jonggol", "Meat Shop Bogor"] },
+    { "grup": "Mitra Usaha & Pengolah", "items": ["UD Daging Berkah", "CV Boga Prima", "Produsen Bakso Kita", "Sosis Nusantara"] }
+  ],
+  "testimoni": { "teks": "Kualitas dagingnya konsisten dan pengirimannya selalu tepat waktu. Rantai dingin terjaga, jadi kami tenang menyajikan ke pelanggan.", "nama": "Nama Klien", "jabatan": "Executive Chef" },
+  "lab": [
+    ["Total Plate Count (TPC)", "maks. 1 × 10⁶ CFU/g", "Isi hasil lab"],
+    ["Escherichia coli", "maks. 1 × 10¹ CFU/g", "Isi hasil lab"],
+    ["Salmonella", "negatif / 25 g", "Isi hasil lab"],
+    ["Staphylococcus aureus", "maks. 1 × 10² CFU/g", "Isi hasil lab"],
+    ["Coliform", "maks. 1 × 10² CFU/g", "Isi hasil lab"]
+  ]
+}
