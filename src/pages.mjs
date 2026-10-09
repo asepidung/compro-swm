@@ -4,7 +4,7 @@ import QRCode from "qrcode";
 const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url)));
 const co = read("../data/company.json");
 const products = read("../data/products.json");
-const dummy = read("../data/dummy.json");
+const clients = read("../data/clients.json");
 
 const A = (p) => `../assets/${p}`;
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -313,11 +313,11 @@ pages.push(page(11, "Halal & Lingkungan", `
 `));
 
 // 12 — Distribusi & Armada
-const dest = dummy.wilayah;
+const dest = clients.wilayah;
 pages.push(page(12, "Distribusi", `
   <div class="kick">Distribusi & armada</div>
   <h1>Menjangkau <em>hampir seluruh Indonesia</em></h1><div class="rule"></div>
-  ${D("Armada: cek ulang · Daftar wilayah di diagram: ilustrasi")}
+  ${D("Armada: cek ulang")} <span class="small" style="margin-left:2mm">Wilayah pada diagram berdasarkan daftar pelanggan; cakupan lain tersedia sesuai permintaan.</span>
   <div class="card" style="margin-top:4mm; padding:0; overflow:hidden; background:linear-gradient(160deg,#fff,#f6efde)">
     <svg viewBox="0 0 180 120" style="width:100%; display:block">
       ${dest.map((d) => `<line x1="90" y1="62" x2="${d.x}" y2="${d.y}" stroke="#f4b223" stroke-width="1.2" stroke-dasharray="3 2"/>`).join("")}
@@ -327,8 +327,8 @@ pages.push(page(12, "Distribusi", `
     </svg>
   </div>
   <div class="grid g4" style="margin-top:5mm">
-    <div class="card stat"><b>${dummy.armada}</b><span>Unit armada berpendingin</span></div>
-    <div class="card stat"><b>Nasional</b><span>Hampir seluruh Indonesia</span></div>
+    <div class="card stat"><b>${co.armada}</b><span>Unit armada berpendingin</span></div>
+    <div class="card stat"><b>${clients.provinsi}+</b><span>Provinsi terlayani</span></div>
     <div class="card stat"><b>1–2 Ton</b><span>Perputaran harian</span></div>
     <div class="card stat"><b>≤ -18°C</b><span>Suhu saat muat</span></div>
   </div>
@@ -345,14 +345,21 @@ pages.push(page(12, "Distribusi", `
 // 13 — Klien & Mitra
 pages.push(page(13, "Klien & Mitra", `
   <div class="kick">Klien & mitra</div>
-  <h1>Dipercaya <em>mitra</em> dari berbagai sektor</h1><div class="rule"></div>
-  ${D("Nama klien: contoh, ganti dengan klien sebenarnya")}
-  ${dummy.klien.map(g => `<h2 style="margin-top:6mm">${g.grup}</h2><div class="grid g4" style="gap:3mm">${g.items.map(n => `<div class="card" style="height:23mm; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:800; font-size:8.4pt; color:#4b4741; padding:2mm">${n}</div>`).join("")}</div>`).join("")}
-  <div class="card grow" style="background:var(--char); color:#fff; border:none; padding:9mm; display:flex; flex-direction:column; justify-content:center">
-    <div style="font-size:30pt; color:var(--gold); line-height:.5; font-weight:800">“</div>
-    <div style="font-size:11pt; line-height:1.55; font-weight:500">${dummy.testimoni.teks}</div>
-    <div style="margin-top:3mm; font-size:8pt; color:var(--gold); font-weight:700">${dummy.testimoni.nama} · ${dummy.testimoni.jabatan} ${D("Contoh")}</div>
+  <h1>Dipercaya <em>jaringan ritel</em> dan horeka</h1><div class="rule"></div>
+  <div class="grid g2" style="margin-top:5mm; gap:5mm">
+    ${clients.utama.map((c, i) => `<div class="card" style="background:var(--char); color:#fff; border:none; padding:8mm; position:relative; overflow:hidden">
+      <div class="num" style="margin-bottom:4mm">${i + 1}</div>
+      <div class="kick" style="color:var(--gold)">Pelanggan utama</div>
+      <div style="font-size:19pt; font-weight:800; line-height:1.1">${c.n}</div>
+      <div style="font-size:8pt; color:#cfc9be; margin-top:1.5mm">${c.d}</div></div>`).join("")}
   </div>
+  <div class="grid g3" style="margin-top:5mm; gap:3mm">
+    <div class="card stat"><b>${clients.outlet}</b><span>Titik pengiriman jaringan ritel & restoran</span></div>
+    <div class="card stat"><b>${clients.provinsi}+</b><span>Provinsi terlayani</span></div>
+    <div class="card stat"><b>${co.armada}</b><span>Armada berpendingin</span></div>
+  </div>
+  ${clients.grup.map(g => `<h2 style="margin-top:6mm">${g.grup}</h2><div style="display:flex; flex-wrap:wrap; gap:2mm">${g.items.map(n => `<div class="card" style="padding:2.6mm 4.2mm; font-weight:700; font-size:8.4pt; border-radius:10mm">${n}</div>`).join("")}</div>`).join("")}
+  <div class="grow" style="display:flex; align-items:flex-end"><div class="todo-note" style="width:100%">${D("Perlu persetujuan klien")} <span class="small">Nama klien dipilah dari daftar customer internal. Konfirmasi merek mana yang boleh dicantumkan sebelum cetak. Angka outlet adalah perkiraan.</span></div></div>
 `));
 
 // 14 — Galeri
