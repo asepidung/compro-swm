@@ -287,8 +287,7 @@ pages.push(page(10, "Tim Ahli", `
   </div>
   <div class="grid g2 grow" style="grid-template-rows:1fr">
     <div class="photo" ${bg("img/team-white.jpg", "background-position: 50% 35%")}></div>
-    <div class="card" style="display:flex; flex-direction:column; justify-content:center"><div class="stat"><b>100%</b><span>Tim produksi inti memegang sertifikat kompetensi (juleha, stunner, AWO, penyelia halal)</span></div><div style="margin-top:3mm">${D("Angka contoh")}</div></div>
-  </div>
+    <div class="card" style="display:flex; flex-direction:column; justify-content:center"><div class="stat"><b>6</b><span>Tenaga bersertifikat di bidang halal dan kesejahteraan hewan: 1 penyelia halal, 2 juleha, 1 AWO, 2 stunner</span></div></div>
 `, "cream"));
 
 // 11 — Halal & Lingkungan

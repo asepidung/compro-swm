@@ -36,20 +36,20 @@
   "pasar": "Hampir seluruh Indonesia (Pasar Tradisional, Horeka, Retail, Mitra Usaha)",
   "tim": [
     {
-      "nama": "Sumanta",
-      "jabatan": "Product Expert"
-    },
-    {
       "nama": "Asep Saepullah",
       "jabatan": "Penyelia Halal"
     },
     {
-      "nama": "Furqonillah",
+      "nama": "Furqonilah",
       "jabatan": "Juleha"
     },
     {
-      "nama": "Jaelani Aslan",
+      "nama": "Zaenal",
       "jabatan": "Juleha"
+    },
+    {
+      "nama": "Taufiq Hidayat",
+      "jabatan": "Animal Welfare Officer"
     },
     {
       "nama": "Nunu Nurjanan",
@@ -58,10 +58,6 @@
     {
       "nama": "Mulyadi",
       "jabatan": "Stunner"
-    },
-    {
-      "nama": "Taufiq Hidayat",
-      "jabatan": "Animal Welfare Officer"
     }
   ],
   "armada": 5
