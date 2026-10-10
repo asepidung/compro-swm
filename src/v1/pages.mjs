@@ -2,14 +2,14 @@ import { readFileSync, existsSync } from "node:fs";
 import QRCode from "qrcode";
 
 const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url)));
-const co = read("../data/company.json");
-const products = read("../data/products.json");
-const clients = read("../data/clients.json");
-const lab = read("../data/lab.json");
+const co = read("../../data/company.json");
+const products = read("../../data/products.json");
+const clients = read("../../data/clients.json");
+const lab = read("../../data/lab.json");
 
 const A = (p) => `../assets/${p}`;
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-const has = (p) => existsSync(new URL(`../assets/${p}`, import.meta.url));
+const has = (p) => existsSync(new URL(`../../assets/${p}`, import.meta.url));
 const bg = (p, extra = "") => `style="background-image:url('${A(p)}');${extra}"`;
 const D = (t = "Data contoh") => `<span class="dummy">${t}</span>`;
 
@@ -226,7 +226,7 @@ pages.push(page(7, "Fasilitas", `
 `));
 
 // 8 — Proses Produksi
-const steps = read("../data/process.json");
+const steps = read("../../data/process.json");
 pages.push(page(8, "Proses Produksi", `
   <div class="kick">Proses produksi</div>
   <h1>Dari kandang hingga <em>meja Anda</em></h1><div class="rule"></div>
@@ -394,7 +394,7 @@ pages.push(page(14, "Galeri", `
 `, "cream"));
 
 // 15 — Penghargaan
-const awards = read("../data/awards.json").map(a => [a.ic, a.t, a.d]);
+const awards = read("../../data/awards.json").map(a => [a.ic, a.t, a.d]);
 const _awardsOld = [
   ["trophy", "Tegar Beriman Award", "Penerima penghargaan Pelopor, Penggerak Peternakan Terbaik."],
   ["shield", "Jaminan Halal Terbaik", "Salah satu dari 5 RPH dengan Sistem Jaminan Halal terbaik dan tercepat."],
