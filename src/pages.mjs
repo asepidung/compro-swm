@@ -226,12 +226,7 @@ pages.push(page(7, "Fasilitas", `
 `));
 
 // 8 — Proses Produksi
-const steps = [
-  [1, "Penerimaan sapi", "Sapi diterima sesuai standar jaminan halal."], [1, "Pemberian pakan", "Pakan berkualitas sebelum proses."], [1, "Penggiringan", "Oleh stockman dengan prinsip kesejahteraan hewan."], [1, "Pemandian", "Sapi dibersihkan sebelum tahap berikutnya."],
-  [2, "Stunning box", "Sapi masuk jalur khusus stunning."], [2, "Stunning", "Dilakukan stunner bersertifikat dengan aman."], [2, "Penyembelihan", "Oleh juru sembelih halal (Juleha)."], [2, "Waktu jeda", "5–10 menit untuk pastikan proses optimal."],
-  [2, "Pengangkatan", "Dengan pengait setelah penyembelihan."], [2, "Pemotongan kepala & kaki", "Dilakukan dengan presisi."], [2, "Pengulitan & pemeriksaan", "Pemeriksaan postmortem karkas dan offal."], [2, "Pembelahan", "Menggunakan splitting saw."],
-  [3, "Pelayuan karkas", "Penimbangan, tenderstretch, dan pelayuan."], [3, "Boning", "Persiapan, pemeriksaan, dan boning."], [3, "Cold storage", "Penimbangan dan penyimpanan sesuai suhu."], [3, "Pembekuan & kirim", "Blast freezer lalu pengiriman berpendingin."]
-];
+const steps = read("../data/process.json");
 pages.push(page(8, "Proses Produksi", `
   <div class="kick">Proses produksi</div>
   <h1>Dari kandang hingga <em>meja Anda</em></h1><div class="rule"></div>
@@ -361,7 +356,7 @@ pages.push(page(12, "Distribusi", `
       ${["Pra-pendinginan boks sesuai produk (chill 0 s.d. -5°C, frozen -17 s.d. -28°C) sebelum muat", "Pemuatan cepat ke mobil box pendingin / thermoking", "Surat jalan dan log pengeluaran barang tercatat", "Integritas rantai dingin terjaga hingga titik akhir"].map(t => `<div style="display:flex; gap:3mm; margin-bottom:2.4mm; font-size:8.3pt; line-height:1.45"><span style="color:var(--gold-d)">${ic("truck")}</span>${t}</div>`).join("")}
     </div>
     <div><h2>Segmen pelanggan</h2>
-      <span class="chip">Horeka</span><span class="chip">Retail</span><span class="chip">Pasar tradisional</span><span class="chip">Mitra usaha</span><span class="chip">Pengolah makanan</span>
+      ${clients.segmen.map(s => `<span class="chip">${s}</span>`).join("")}
       <div class="photo" ${bg("img/meat-pile.jpg", "height:34mm; margin-top:4mm")}></div></div>
   </div>
 `, "cream"));
@@ -370,13 +365,7 @@ pages.push(page(12, "Distribusi", `
 pages.push(page(13, "Klien & Mitra", `
   <div class="kick">Klien & mitra</div>
   <h1>Dipercaya <em>jaringan ritel</em> dan horeka</h1><div class="rule"></div>
-  <div class="grid g2" style="margin-top:5mm; gap:5mm">
-    ${clients.utama.map((c, i) => `<div class="card" style="background:var(--char); color:#fff; border:none; padding:8mm; position:relative; overflow:hidden">
-      <div class="num" style="margin-bottom:4mm">${i + 1}</div>
-      <div class="kick" style="color:var(--gold)">Pelanggan utama</div>
-      <div style="font-size:19pt; font-weight:800; line-height:1.1">${c.n}</div>
-      <div style="font-size:8pt; color:#cfc9be; margin-top:1.5mm">${c.d}</div></div>`).join("")}
-  </div>
+  <p class="lead" style="font-size:9.5pt">Melayani segmen ${clients.segmen.join(", ").toLowerCase()}.</p>
   <div class="grid g3" style="margin-top:5mm; gap:3mm">
     <div class="card stat"><b>${clients.outlet}</b><span>Titik pengiriman jaringan ritel & restoran</span></div>
     <div class="card stat"><b>${clients.provinsi}+</b><span>Provinsi terlayani</span></div>
@@ -405,7 +394,8 @@ pages.push(page(14, "Galeri", `
 `, "cream"));
 
 // 15 — Penghargaan
-const awards = [
+const awards = read("../data/awards.json").map(a => [a.ic, a.t, a.d]);
+const _awardsOld = [
   ["trophy", "Tegar Beriman Award", "Penerima penghargaan Pelopor, Penggerak Peternakan Terbaik."],
   ["shield", "Jaminan Halal Terbaik", "Salah satu dari 5 RPH dengan Sistem Jaminan Halal terbaik dan tercepat."],
   ["award", "NKV Tingkat I", "Gudang dan RPH berpredikat Baik Sekali pada surveilans 24 September 2025."],

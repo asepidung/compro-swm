@@ -1,22 +1,98 @@
 {
   "_catatan": "Dipilah dari Customer_SWM.pdf (daftar internal). Hanya nama merek/grup; tanpa individu, alamat, bank, atau termin. Perlu persetujuan klien sebelum dicetak.",
-  "utama": [
-    { "n": "Lion Superindo", "d": "Jaringan supermarket" },
-    { "n": "Hypermart", "d": "Hypermart & Hyfresh" }
-  ],
   "grup": [
-    { "grup": "Ritel & supermarket", "items": ["AEON", "Carrefour", "Grand Lucky", "GS The Fresh", "The Foodhall", "Gelael", "Hokky Supermarket", "FMT Gourmet"] },
-    { "grup": "Hotel", "items": ["Pullman", "Hilton", "Sheraton", "Swissotel", "Novotel", "Mövenpick", "Ibis", "Padma"] },
-    { "grup": "Restoran, steakhouse & butcher", "items": ["Abuba Steak", "Bull & Vine Steakhouse", "El Asador", "Ikira Japanese Steakhouse", "Bamsae Korean Resto", "Georgia Grill", "Mike Jones", "Mulligan's Bistro", "Smokehouse BBQ", "Meat Whisperer", "Marbling.id", "Malik Butchery Shop"] }
+    {
+      "grup": "Modern market",
+      "items": [
+        "Lion Superindo",
+        "Hypermart",
+        "AEON",
+        "Carrefour",
+        "Grand Lucky",
+        "GS The Fresh",
+        "The Foodhall",
+        "Gelael",
+        "Hokky Supermarket",
+        "FMT Gourmet"
+      ]
+    },
+    {
+      "grup": "Horeka · hotel",
+      "items": [
+        "Pullman",
+        "Hilton",
+        "Sheraton",
+        "Swissotel",
+        "Novotel",
+        "Mövenpick",
+        "Ibis",
+        "Padma"
+      ]
+    },
+    {
+      "grup": "Horeka · restoran & steakhouse",
+      "items": [
+        "Abuba Steak",
+        "Bull & Vine Steakhouse",
+        "El Asador",
+        "Ikira Japanese Steakhouse",
+        "Bamsae Korean Resto",
+        "Georgia Grill",
+        "Mike Jones",
+        "Mulligan's Bistro",
+        "Smokehouse BBQ",
+        "Meat Whisperer"
+      ]
+    },
+    {
+      "grup": "Retail & butcher",
+      "items": [
+        "Marbling.id",
+        "Malik Butchery Shop"
+      ]
+    }
   ],
   "wilayah": [
-    { "n": "Jabodetabek", "x": 58, "y": 32, "core": true },
-    { "n": "Jawa Barat", "x": 122, "y": 32, "core": true },
-    { "n": "Jawa Tengah", "x": 160, "y": 66 },
-    { "n": "Jawa Timur", "x": 138, "y": 102 },
-    { "n": "Bali", "x": 86, "y": 106 },
-    { "n": "Riau", "x": 20, "y": 66 }
+    {
+      "n": "Jabodetabek",
+      "x": 58,
+      "y": 32,
+      "core": true
+    },
+    {
+      "n": "Jawa Barat",
+      "x": 122,
+      "y": 32,
+      "core": true
+    },
+    {
+      "n": "Jawa Tengah",
+      "x": 160,
+      "y": 66
+    },
+    {
+      "n": "Jawa Timur",
+      "x": 138,
+      "y": 102
+    },
+    {
+      "n": "Bali",
+      "x": 86,
+      "y": 106
+    },
+    {
+      "n": "Riau",
+      "x": 20,
+      "y": 66
+    }
   ],
   "outlet": "100+",
-  "provinsi": 7
+  "provinsi": 7,
+  "segmen": [
+    "Modern market",
+    "Distributor",
+    "Horeka",
+    "Retail",
+    "Industri"
+  ]
 }

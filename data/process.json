@@ -1,0 +1,18 @@
+[
+  [1, "Penerimaan sapi", "Sapi diterima dan diperiksa sesuai standar jaminan halal."],
+  [1, "Pengistirahatan", "Sapi diistirahatkan agar tenang dan tidak stres sebelum dipotong."],
+  [1, "Pemandian", "Sapi dibersihkan sebelum masuk tahap berikutnya."],
+  [1, "Penggiringan", "Oleh stockman dengan prinsip kesejahteraan hewan."],
+  [2, "Stunning box", "Sapi masuk jalur khusus menuju stunning box."],
+  [2, "Stunning", "Dilakukan stunner bersertifikat secara aman."],
+  [2, "Penyembelihan", "Oleh juru sembelih halal (Juleha) bersertifikat."],
+  [2, "Waktu jeda", "5–10 menit untuk memastikan proses berjalan sempurna."],
+  [2, "Pengangkatan", "Karkas diangkat dengan pengait."],
+  [2, "Pemotongan kepala & kaki", "Dilakukan dengan presisi."],
+  [2, "Pengulitan & pemeriksaan", "Pemeriksaan postmortem karkas dan jeroan."],
+  [2, "Pembelahan karkas", "Menggunakan splitting saw."],
+  [3, "Pelayuan", "Penimbangan, tenderstretch, dan pelayuan karkas."],
+  [3, "Boning", "Pemisahan daging dari tulang dan pemeriksaan mutu."],
+  [3, "Cold storage", "Penimbangan dan penyimpanan sesuai suhu chill atau frozen."],
+  [3, "Pembekuan & pengiriman", "Blast freezer, lalu dikirim dengan armada berpendingin."]
+]
