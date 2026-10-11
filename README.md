@@ -36,7 +36,6 @@ Total tetap kelipatan 4. Halaman produk (17–22) adalah penyangga; kalau halama
 
 ## Sebelum cetak
 
-- Konfirmasi izin klien untuk nama merek di halaman Klien & Mitra.
-- Konfirmasi sumber "Jaminan Halal Terbaik" (dari brosur event).
-- Cek tautan QR bit.ly/swmcatalogue dan bit.ly/swmcompro.
-- Konfirmasi jumlah armada (5 unit).
+- Izin klien untuk nama merek di halaman Klien & Mitra (belum didapat).
+- Cek tautan QR bit.ly/swmcatalogue dan bit.ly/swmcompro (ditunda).
+- Data armada: jumlah dan jenis (Canter, Traga, engkel, mobil dinas) sedang diriset; angka 5 unit belum final.

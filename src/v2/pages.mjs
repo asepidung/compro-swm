@@ -353,7 +353,7 @@ pages.push(page("14 · Galeri", `
 pages.push(page("15 · Prestasi", `
   <div class="fill">
     <h1>Kepercayaan yang <em>terbukti</em></h1>${orn()}
-    <div class="g2" style="gap:8mm 10mm; margin-top:2mm">
+    <div class="g3" style="gap:8mm 8mm; margin-top:2mm">
       ${awards.map(a => `<div class="pillar" style="padding-top:5mm"><div style="width:14mm; height:14mm; border:.3mm solid var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold-d)">${ic(a.ic, "width:7mm; height:7mm")}</div><h3 style="font-size:15pt; margin-top:4mm">${a.t}</h3><p>${a.d}</p></div>`).join("")}
     </div>
     <div class="band grow" style="margin-top:10mm; background-image:url('${A("img/steak-board.jpg")}'); display:flex; align-items:center; padding:0 20mm">
