@@ -7,8 +7,8 @@ Company profile A4 (24 halaman, 1 halaman per muka). Sumber HTML/CSS yang dirend
 | Path | Isi |
 |---|---|
 | `data/*.json` | Semua isi: perusahaan, produk, klien, hasil lab, proses, penghargaan |
-| `src/v2/` | Desain utama (elegan: Playfair Display + Plus Jakarta Sans, emas-gelap) |
-| `src/v1/` | Desain lama (arsip) |
+| `src/v3/` | Desain utama (kuning dan abu gelap, huruf tebal Barlow Condensed + Plus Jakarta Sans) |
+| `src/v2/`, `src/v1/` | Desain sebelumnya (arsip) |
 | `assets/` | Logo, foto, foto produk, scan sertifikat, font |
 | `build.mjs` | Render ke PDF |
 
@@ -17,7 +17,7 @@ Company profile A4 (24 halaman, 1 halaman per muka). Sumber HTML/CSS yang dirend
 ```
 npm install
 npm run build        # desain utama -> dist/compro.pdf
-node build.mjs v1    # desain lama  -> dist/compro-v1.pdf
+node build.mjs v2    # arsip -> dist/compro-v2.pdf
 ```
 
 Chromium dicari lewat `PLAYWRIGHT_BROWSERS_PATH`; atau set `CHROMIUM_PATH`.

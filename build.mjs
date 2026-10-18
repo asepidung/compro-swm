@@ -1,11 +1,12 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { chromium } from "playwright-core";
 
-// node build.mjs        -> desain utama (src/v2/) -> dist/compro.pdf
-// node build.mjs v1     -> desain lama  (src/v1/) -> dist/compro-v1.pdf
-const v = process.argv[2] || "v2";
+// node build.mjs        -> desain utama (src/v3/) -> dist/compro.pdf
+// node build.mjs v2     -> desain elegan serif (arsip) -> dist/compro-v2.pdf
+// node build.mjs v1     -> desain pertama (arsip)      -> dist/compro-v1.pdf
+const v = process.argv[2] || "v3";
 const dir = `./src/${v}/`;
-const out = v === "v2" ? "compro" : `compro-${v}`;
+const out = v === "v3" ? "compro" : `compro-${v}`;
 
 const { default: pages } = await import(`${dir}pages.mjs`);
 const css = readFileSync(new URL(`${dir}styles.css`, import.meta.url), "utf8");
