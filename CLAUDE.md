@@ -5,8 +5,8 @@ Bahasa kerja: Indonesia (user biasa dipanggil "bro"). Isi compro dan web: bahasa
 
 ## Kondisi saat ini
 - Compro 24 halaman A4 sudah jadi: desain **v3** (kuning `#f7b500` + abu gelap `#2a2a2a`, judul Barlow Condensed tebal, isi Plus Jakarta Sans 11 pt). Ukuran huruf sengaja besar: pembaca utamanya bapak-bapak.
-- Branch kerja: `claude/festive-cray-7ixc70`. Belum ada PR.
-- Website: **belum dimulai**. Rencana: folder `web/` di repo ini, memakai `data/` dan `assets/` yang sama supaya isi compro dan web tidak pernah beda.
+- Branch kerja: `claude/friendly-brahmagupta-54l2ho` (sebelumnya `claude/festive-cray-7ixc70`). Belum ada PR.
+- Website: **rencana sudah disepakati (Okt 2026), pengerjaan ditunda** sampai user minta. Rencana: folder `web/` di repo ini, memakai `data/` dan `assets/` yang sama supaya isi compro dan web tidak pernah beda.
 
 ## Struktur
 | Path | Isi |
@@ -51,11 +51,22 @@ Foto produk dan tim otomatis terpasang bila file ada (`tenderloin.jpg`, `asep-sa
 - File `.cdr` (CorelDRAW) tidak bisa dibaca; minta versi PDF.
 - Foto besar: lebih mudah diunggah user langsung ke `assets/` lewat GitHub.
 
-## Rencana website
-- Halaman: beranda, tentang (sejarah, visi misi, organisasi), fasilitas, proses produksi, jaminan mutu dan hasil lab, halal, produk (katalog lengkap ±50 potongan, termasuk yang tidak muat di compro), klien, galeri, kontak.
-- Pakai data dan aset yang sama; katalog lengkap di web menggantikan QR katalog.
-- Belum diputuskan: stack, hosting, dua bahasa (Inggris menyusul), formulir kontak atau WhatsApp.
-- Mulai dengan perencanaan (halaman, tujuan, hosting) sebelum membuat desain.
+## Rencana website (disepakati, pengerjaan ditunda)
+**Tujuan** (urut prioritas): (1) meyakinkan bagian pembelian lewat legalitas, halal, NKV, uji lab; (2) menghasilkan kontak lewat WhatsApp (ukur klik WA); (3) katalog lengkap ±50 potongan, menggantikan QR katalog; (4) satu tautan untuk dibagikan sales.
+
+**Halaman:** Beranda · Tentang (sejarah, visi misi, tim ahli, organisasi tanpa nama staf) · Fasilitas & Proses (digabung: RPH, cold storage, armada, alur produksi) · Mutu & Halal · Produk (filter chill/frozen, bagian potongan) · Klien (segmen saja sampai ada izin merek) · Kontak (dua alamat + peta, WA, telepon, email). Galeri ditunda sampai foto ada.
+
+**Keputusan:**
+- **Tanpa harga** di katalog; tombol "tanya harga via WA".
+- **Legalitas:** tampilkan nomor sertifikat (halal, NKV) dan tautan cek ke situs penerbit, **bukan scan utuh**. NPWP/NIB lengkap tidak ditampilkan di web.
+- **Lab:** jadwal uji, nama lab, akreditasi KAN. Tanpa angka hasil (lihat catatan Coliform di atas).
+- **Kontak:** tombol WhatsApp, tanpa formulir.
+- **Stack:** situs statis dibangun dari `data/*.json` dan `assets/` yang sama dengan compro, di folder `web/`. Bukan WordPress.
+- **Hosting:** Cloudflare Pages (gratis, terbit otomatis dari GitHub). Email official@ diteruskan ke Gmail (Cloudflare Email Routing) atau Google Workspace.
+- **Domain `wijayameat.co.id` sudah dimiliki user** (atas nama user). Registrar dan akses DNS belum ditanyakan; perlu saat mau terbit.
+- **Yang mengubah isi: user dan beberapa staf.** Staf butuh cara edit tanpa coding: pakai CMS berbasis Git (mis. Decap CMS / Pages CMS) yang menyunting `data/*.json`, supaya compro tetap ikut sumber yang sama.
+- **Bahasa:** Indonesia dulu, struktur siap dua bahasa.
+- Biarkan Claude memilih detail teknis terbaik ("cari jalan terbaik").
 
 ## Aturan kerja
 - Jangan membuat PR kecuali diminta. Commit ke branch di atas, pesan commit singkat dalam bahasa Indonesia.
