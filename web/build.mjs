@@ -119,7 +119,7 @@ const misi = [
   "Mengembangkan teknologi dan inovasi dalam manajemen distribusi untuk efisiensi dan produktivitas."
 ];
 add({ file: "tentang.html", title: "Tentang Kami", desc: `Sejarah, visi misi, dan tim ahli ${co.nama}. Berdiri 2014 sebagai CV Wijaya Meat, resmi PT sejak 2020.`,
-  hero: pageHero("Tentang kami", "Dari CV kecil menjadi pemasok terpercaya", `Sejak 2014 kami melayani kebutuhan daging sapi. Sejak 2020 resmi sebagai ${co.nama}.`, "owner-farm.jpg"),
+  hero: pageHero("Tentang kami", "Dari CV kecil menjadi pemasok terpercaya", `Sejak 2014 kami melayani kebutuhan daging sapi. Sejak 2020 resmi sebagai ${co.nama}.`, "cattle-yard.jpg"),
   body: sec(`<div class="two"><div class="photo" style="background-image:url('assets/img/owner-farm.jpg')" role="img" aria-label="${co.owner}"></div>
       <div>${head("Sambutan", "Selamat datang di Wijaya Meat")}
       <p>Selamat datang di <b>${co.nama}</b>, tempat di mana komitmen kami untuk memenuhi kebutuhan Anda menjadi prioritas utama.</p>
