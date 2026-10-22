@@ -63,7 +63,7 @@ Foto produk dan tim otomatis terpasang bila file ada (`tenderloin.jpg`, `asep-sa
 - **Lab:** jadwal uji, nama lab, akreditasi KAN. Tanpa angka hasil (lihat catatan Coliform di atas).
 - **Kontak:** tombol WhatsApp, tanpa formulir.
 - **Stack:** situs statis dibangun dari `data/*.json` dan `assets/` yang sama dengan compro, di folder `web/`. Bukan WordPress.
-- **Hosting:** Cloudflare Pages (gratis, terbit otomatis dari GitHub). Email official@ diteruskan ke Gmail (Cloudflare Email Routing) atau Google Workspace.
+- **Hosting:** produksi di **VPS milik user** (nginx, statis; terbit lewat GitHub Actions + rsync, belum dibuat; butuh OS, web server/panel, dan lokasi DNS dari user). **Staging sementara di Cloudflare Pages** (gratis, preview per branch). Email official@ belum diputuskan.
 - **Domain `wijayameat.co.id` sudah dimiliki user** (atas nama user). Registrar dan akses DNS belum ditanyakan; perlu saat mau terbit.
 - **Yang mengubah isi: user dan beberapa staf.** Staf butuh cara edit tanpa coding: pakai CMS berbasis Git (mis. Decap CMS / Pages CMS) yang menyunting `data/*.json`, supaya compro tetap ikut sumber yang sama.
 - **Bahasa:** Indonesia dulu, struktur siap dua bahasa.
