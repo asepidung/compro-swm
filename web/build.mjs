@@ -20,9 +20,10 @@ const nav = [
   ["mutu.html", "Mutu & Halal"], ["produk.html", "Produk"], ["klien.html", "Klien"], ["kontak.html", "Kontak"]
 ];
 
-// Staging: Cloudflare Pages mengisi CF_PAGES_BRANCH; selain cabang produksi, mesin pencari diminta tidak mengindeks.
+// Staging: Cloudflare (Workers Builds: WORKERS_CI_BRANCH, Pages: CF_PAGES_BRANCH) mengisi nama cabang; selain cabang produksi, mesin pencari diminta tidak mengindeks.
 const prodBranch = process.env.PRODUCTION_BRANCH || "main";
-const staging = !!process.env.CF_PAGES_BRANCH && process.env.CF_PAGES_BRANCH !== prodBranch;
+const ciBranch = process.env.WORKERS_CI_BRANCH || process.env.CF_PAGES_BRANCH;
+const staging = !!ciBranch && ciBranch !== prodBranch;
 
 const layout = ({ file, title, desc, body, hero = "" }) => `<!doctype html>
 <html lang="id"><head><meta charset="utf-8">

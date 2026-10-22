@@ -63,7 +63,7 @@ Foto produk dan tim otomatis terpasang bila file ada (`tenderloin.jpg`, `asep-sa
 - **Lab:** jadwal uji, nama lab, akreditasi KAN. Tanpa angka hasil (lihat catatan Coliform di atas).
 - **Kontak:** tombol WhatsApp, tanpa formulir.
 - **Stack:** situs statis dibangun dari `data/*.json` dan `assets/` yang sama dengan compro, di folder `web/`. Bukan WordPress.
-- **Hosting:** produksi di **VPS milik user** (nginx, statis; terbit lewat GitHub Actions + rsync, belum dibuat; butuh OS, web server/panel, dan lokasi DNS dari user). **Staging sementara di Cloudflare Pages** (gratis, preview per branch). Email official@ belum diputuskan.
+- **Hosting:** produksi di **VPS milik user** (nginx, statis; terbit lewat GitHub Actions + rsync, belum dibuat; butuh OS, web server/panel, dan lokasi DNS dari user). **Staging sementara di Cloudflare Workers Builds** (gratis, `wrangler.jsonc` menyajikan `web/dist`; build: `npm install && npm run build:web`). Email official@ belum diputuskan.
 - **Domain `wijayameat.co.id` sudah dimiliki user** (atas nama user). Registrar dan akses DNS belum ditanyakan; perlu saat mau terbit.
 - **Yang mengubah isi: user dan beberapa staf.** Staf butuh cara edit tanpa coding: pakai CMS berbasis Git (mis. Decap CMS / Pages CMS) yang menyunting `data/*.json`, supaya compro tetap ikut sumber yang sama.
 - **Bahasa:** Indonesia dulu, struktur siap dua bahasa.
@@ -76,6 +76,6 @@ Foto produk dan tim otomatis terpasang bila file ada (`tenderloin.jpg`, `asep-sa
 
 ## Prototipe website (`web/`)
 - 7 halaman: beranda, tentang, fasilitas (proses + distribusi), mutu & halal, produk (filter + cari, tombol "Tanya harga via WA"), klien (segmen saja), kontak. Tanpa harga, tanpa scan legalitas, tanpa angka hasil lab, tanpa jumlah armada.
-- Staging: bila env `CF_PAGES_BRANCH` ada dan bukan `PRODUCTION_BRANCH` (default `main`), halaman diberi `noindex`.
+- Staging: bila env `WORKERS_CI_BRANCH` (atau `CF_PAGES_BRANCH`) ada dan bukan `PRODUCTION_BRANCH` (default `main`), halaman diberi `noindex`.
 - Belum ada: CMS (Decap/Pages CMS butuh `data/*.json` berakar objek; `products.json` dan `process.json` sekarang berakar array, perlu diubah bersama `src/v3/pages.mjs`), dua bahasa, analitik, foto 17 produk, foto tim, galeri.
 - Angka "30+ potongan" di web = jumlah item di `products.json`; katalog asli ±50 potongan.
