@@ -6,7 +6,7 @@ Bahasa kerja: Indonesia (user biasa dipanggil "bro"). Isi compro dan web: bahasa
 ## Kondisi saat ini
 - Compro 24 halaman A4 sudah jadi: desain **v3** (kuning `#f7b500` + abu gelap `#2a2a2a`, judul Barlow Condensed tebal, isi Plus Jakarta Sans 11 pt). Ukuran huruf sengaja besar: pembaca utamanya bapak-bapak.
 - Branch kerja: `claude/friendly-brahmagupta-54l2ho` (sebelumnya `claude/festive-cray-7ixc70`). Belum ada PR.
-- Website: **rencana sudah disepakati (Okt 2026), pengerjaan ditunda** sampai user minta. Rencana: folder `web/` di repo ini, memakai `data/` dan `assets/` yang sama supaya isi compro dan web tidak pernah beda.
+- Website: **contoh (prototipe) 7 halaman sudah ada di `web/`**, dibangun dari `data/` dan `assets/`. Bukan versi final; desain dan isi masih untuk ditinjau user. CMS belum dipasang. Rencana: folder `web/` di repo ini, memakai `data/` dan `assets/` yang sama supaya isi compro dan web tidak pernah beda.
 
 ## Struktur
 | Path | Isi |
@@ -15,6 +15,7 @@ Bahasa kerja: Indonesia (user biasa dipanggil "bro"). Isi compro dan web: bahasa
 | `src/v3/` | Desain utama compro (`pages.mjs`, `styles.css`). `src/v2/` dan `src/v1/` = arsip |
 | `assets/` | `logo/`, `img/`, `products/<slug>.jpg`, `team/<slug>.jpg`, `cert/` (scan legalitas), `fonts/` |
 | `build.mjs` | HTML ke PDF lewat Chromium (Playwright). `npm run build` ke `dist/compro.pdf` |
+| `web/` | Prototipe website statis. `web/build.mjs` (generator), `web/src/style.css` dan `site.js`. `npm run build:web` ke `web/dist/` (tidak di-commit) |
 | `dist/` | PDF terbaru (di-commit supaya mudah dilihat user) |
 
 Build: `npm install && npm run build`. Chromium ada di `PLAYWRIGHT_BROWSERS_PATH`, jangan jalankan `playwright install`.
@@ -72,3 +73,9 @@ Foto produk dan tim otomatis terpasang bila file ada (`tenderloin.jpg`, `asep-sa
 - Jangan membuat PR kecuali diminta. Commit ke branch di atas, pesan commit singkat dalam bahasa Indonesia.
 - Cek visual hasil render (PDF ke PNG) sebelum bilang selesai; periksa teks yang menimpa footer.
 - Laporkan apa adanya: sebut data yang meragukan, jangan diam-diam menghapus atau memperhalus.
+
+## Prototipe website (`web/`)
+- 7 halaman: beranda, tentang, fasilitas (proses + distribusi), mutu & halal, produk (filter + cari, tombol "Tanya harga via WA"), klien (segmen saja), kontak. Tanpa harga, tanpa scan legalitas, tanpa angka hasil lab, tanpa jumlah armada.
+- Staging: bila env `CF_PAGES_BRANCH` ada dan bukan `PRODUCTION_BRANCH` (default `main`), halaman diberi `noindex`.
+- Belum ada: CMS (Decap/Pages CMS butuh `data/*.json` berakar objek; `products.json` dan `process.json` sekarang berakar array, perlu diubah bersama `src/v3/pages.mjs`), dua bahasa, analitik, foto 17 produk, foto tim, galeri.
+- Angka "30+ potongan" di web = jumlah item di `products.json`; katalog asli ±50 potongan.
