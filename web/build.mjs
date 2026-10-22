@@ -16,8 +16,8 @@ const wa = (text) => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
 const maps = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 
 const nav = [
-  ["index.html", "Beranda"], ["tentang.html", "Tentang"], ["fasilitas.html", "Fasilitas & Proses"],
-  ["mutu.html", "Mutu & Halal"], ["produk.html", "Produk"], ["klien.html", "Klien"], ["kontak.html", "Kontak"]
+  ["produk.html", "Produk"], ["tentang.html", "Tentang"], ["fasilitas.html", "Fasilitas"],
+  ["mutu.html", "Mutu & Halal"], ["klien.html", "Klien"], ["kontak.html", "Kontak"]
 ];
 
 // Staging: Cloudflare (Workers Builds: WORKERS_CI_BRANCH, Pages: CF_PAGES_BRANCH) mengisi nama cabang; selain cabang produksi, mesin pencari diminta tidak mengindeks.
@@ -55,10 +55,11 @@ ${hero}
 <script src="site.js"></script>
 </body></html>`;
 
-const pageHero = (kick, h, sub, img) => `<section class="ph" style="background-image:linear-gradient(90deg,rgba(25,25,25,.9),rgba(25,25,25,.55)),url('assets/img/${img}')"><div class="wrap">
-  <div class="kick">${kick}</div><h1>${h}</h1>${sub ? `<p>${sub}</p>` : ""}</div></section>`;
+const pageHero = (kick, h, sub, img) => `<section class="ph"><div class="wrap ph-in"><div>
+  <div class="kick">${kick}</div><h1>${h}</h1>${sub ? `<p>${sub}</p>` : ""}</div>
+  <div class="ph-img" style="background-image:url('assets/img/${img}')"></div></div></section>`;
 const sec = (inner, cls = "") => `<section class="sec ${cls}"><div class="wrap">${inner}</div></section>`;
-const head = (kick, h, sub = "") => `<div class="sh"><div class="kick">${kick}</div><h2>${h}</h2><div class="bar"></div>${sub ? `<p class="lead">${sub}</p>` : ""}</div>`;
+const head = (kick, h, sub = "") => `<div class="sh"><div class="kick">${kick}</div><h2>${h}</h2>${sub ? `<p class="lead">${sub}</p>` : ""}</div>`;
 const pages = [];
 const add = (p) => pages.push(p);
 
@@ -74,23 +75,25 @@ const productCard = (p) => { const f = `products/${slug(p.nama)}.jpg`;
 
 // ── Beranda ───────────────────────────────────────────────
 add({ file: "index.html", title: "Pemasok Daging Sapi Halal & Bersertifikat NKV", desc: `${co.nama}: pemasok daging sapi segar dan beku dari RPH Jonggol, bersertifikat halal dan NKV Tingkat I. Melayani modern market, horeka, distributor, retail, dan industri.`,
-  hero: `<section class="hero" style="background-image:linear-gradient(90deg,rgba(20,20,20,.88),rgba(20,20,20,.35)),url('assets/img/cattle-fence.jpg')"><div class="wrap">
-    <div class="kick">RPH Jonggol · Kabupaten Bogor</div>
-    <h1>Daging sapi berkualitas, <em>halal</em> dan terlacak.</h1>
-    <p>${co.nama} memasok daging sapi segar dan beku dari rumah potong sendiri yang bersertifikat NKV Tingkat I, untuk modern market, hotel, restoran, dan industri.</p>
-    <div class="cta"><a class="btn" data-wa href="${wa("Halo Wijaya Meat, saya ingin pesan / minta penawaran daging sapi.")}">Minta penawaran via WhatsApp</a><a class="btn ghost" href="produk.html">Lihat produk</a></div>
+  hero: `<section class="hero"><div class="wrap">
+    <div class="hero-in"><div>
+      <div class="kick">Pemasok daging sapi untuk bisnis</div>
+      <h1>Daging sapi halal dari RPH sendiri, <em>konsisten</em> untuk bisnis Anda.</h1>
+      <p class="lead">Tersedia ${allItems.length}+ potongan segar dan beku untuk modern market, distributor, hotel, restoran, dan industri. Kirim kebutuhan Anda, tim kami menyiapkan penawaran.</p>
+      <div class="cta"><a class="btn" data-wa href="${wa("Halo Wijaya Meat, saya ingin minta penawaran daging sapi.")}">Minta penawaran</a><a class="btn ghost" data-wa href="${wa("Halo Wijaya Meat, saya ingin chat.")}">Chat WhatsApp</a></div>
+    </div><div class="hero-img"><div class="pic" style="background-image:url('assets/img/ribeye-pair.jpg')" role="img" aria-label="Ribeye pilihan"></div>
+      <div class="tag"><img src="assets/logo/halal.png" alt="Halal"><div>Halal &amp; NKV Tingkat I<small>RPH dan cold storage</small></div></div></div></div>
+    <div class="facts"><div><b>2014</b><span>Berdiri sebagai CV Wijaya Meat</span></div>
+      <div><b>${co.cold_storage.kapasitas}</b><span>Kapasitas cold storage</span></div>
+      <div><b>NKV I</b><span>RPH dan gudang, predikat Baik Sekali</span></div>
+      <div><b>Jonggol</b><span>Kabupaten Bogor, Jawa Barat</span></div></div>
   </div></section>`,
-  body: sec(`<div class="stats">
-      <div class="stat"><b>2014</b><span>Berdiri sebagai CV Wijaya Meat</span></div>
-      <div class="stat"><b>${co.cold_storage.kapasitas.replace(" ", "&nbsp;")}</b><span>Kapasitas cold storage</span></div>
-      <div class="stat"><b>NKV I</b><span>RPH dan gudang, predikat Baik Sekali</span></div>
-      <div class="stat"><b>Halal</b><span>PT dan RPH bersertifikat halal</span></div></div>`, "tight") +
-  sec(head("Kenapa Wijaya Meat", "Satu rantai, dari RPH sampai pengiriman") + `<div class="g4">
+  body: sec(head("Kenapa Wijaya Meat", "Satu rantai, dari RPH sampai pengiriman") + `<div class="g4">
       ${[["RPH sendiri", `Pemotongan di RPHR Jonggol dengan juru sembelih halal, stunner, dan Animal Welfare Officer bersertifikat.`],
          ["Rantai dingin terjaga", `Chill ${co.cold_storage.suhu_chill}, frozen ${co.cold_storage.suhu_frozen}. Suhu dicatat 3 kali sehari.`],
          ["Diuji berkala", "Daging dan jeroan diuji 3 bulan sekali di laboratorium terakreditasi KAN."],
          ["Katalog lengkap", `${allItems.length}+ potongan: prime cuts, special cuts, secondary cuts, bone-in dan giling.`]]
-        .map(([t, d]) => `<div class="card"><h3>${t}</h3><p>${d}</p></div>`).join("")}</div>`, "gray") +
+        .map(([t, d], i) => `<div class="card"><div class="ic">${i + 1}</div><h3>${t}</h3><p>${d}</p></div>`).join("")}</div>`, "gray") +
   sec(head("Produk unggulan", "Potongan pilihan") + `<div class="pgrid">${allItems.filter((p) => has(`products/${slug(p.nama)}.jpg`)).slice(0, 6).map(productCard).join("")}</div>
     <p class="center"><a class="btn" href="produk.html">Lihat semua produk</a></p>`) +
   `<section class="band" style="background-image:linear-gradient(rgba(20,20,20,.78),rgba(20,20,20,.78)),url('assets/img/meat-closeup.jpg')"><div class="wrap center">
@@ -141,7 +144,7 @@ add({ file: "fasilitas.html", title: "Fasilitas & Proses Produksi", desc: "RPH d
         <div class="pad"><span class="chip">NKV Tingkat I</span><h3>Cold storage</h3><small>${co.nkv_gudang}</small>
         <p>Kapasitas ${co.cold_storage.kapasitas}, luas ${co.cold_storage.luas}, perputaran ${co.cold_storage.perputaran} per hari dengan rotasi FIFO.</p></div></div></div>
     <ul class="ticks">${["Palet plastik food grade, minimal 15 cm dari lantai", "Jarak tumpukan 10–15 cm dari dinding dan 50 cm dari evaporator", "Anteroom tertutup untuk bongkar muat", "Pencatatan suhu 3 kali sehari dan pengendalian hama berkala"].map((t) => `<li>${t}</li>`).join("")}</ul>`) +
-  sec(head("Proses produksi", `${steps.length} tahap terkontrol`) + [1, 2, 3].map((ph) => `<h3 class="mt">${phase[ph]}</h3><ol class="steps" style="counter-reset:s ${steps.findIndex((s) => s[0] === ph)}">${steps.filter((s) => s[0] === ph).map(([, t, d]) => `<li><b>${t}</b><span>${d}</span></li>`).join("")}</ol>`).join(""), "dark") +
+  sec(head("Proses produksi", `${steps.length} tahap terkontrol`) + [1, 2, 3].map((ph) => `<h3 class="mt">${phase[ph]}</h3><ol class="steps" style="counter-reset:s ${steps.findIndex((s) => s[0] === ph)}">${steps.filter((s) => s[0] === ph).map(([, t, d]) => `<li><b>${t}</b><span>${d}</span></li>`).join("")}</ol>`).join(""), "gray") +
   sec(head("Distribusi", "Pengiriman berpendingin", "Pengiriman dengan armada berpendingin ke Jabodetabek, Jawa Barat, dan sebagian besar Indonesia.") + `<ul class="ticks">${["Pra-pendinginan boks sesuai produk sebelum muat", "Pemuatan cepat ke mobil box berpendingin", "Surat jalan dan log pengeluaran tercatat", "Rantai dingin terjaga hingga tujuan"].map((t) => `<li>${t}</li>`).join("")}</ul>`) });
 
 // ── Mutu & Halal ──────────────────────────────────────────
