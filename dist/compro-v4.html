@@ -1,0 +1,346 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Company Profile PT. Santi Wijaya Meat</title><style>@font-face { font-family: "BC"; font-weight: 600; src: url("../assets/fonts/barlow-condensed-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "BC"; font-weight: 700; src: url("../assets/fonts/barlow-condensed-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "BC"; font-weight: 800; src: url("../assets/fonts/barlow-condensed-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "PJS"; font-weight: 400; src: url("../assets/fonts/plus-jakarta-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "PJS"; font-weight: 500; src: url("../assets/fonts/plus-jakarta-sans-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "PJS"; font-weight: 600; src: url("../assets/fonts/plus-jakarta-sans-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "PJS"; font-weight: 700; src: url("../assets/fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "PJS"; font-weight: 800; src: url("../assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2"); }
+
+:root { --y: #f7b500; --y2: #ffd24d; --yl: #fff4cc; --c: #2a2a2a; --c2: #3a3a3a; --g: #f3f2ee; --line: #e4e1d8; --mute: #6a675f; }
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "PJS", "DejaVu Sans", sans-serif; font-size: 11pt; font-weight: 500; color: #26241f; background: #777; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: #fff; margin: 0 auto 8mm; break-after: page; padding: 30mm 18mm 22mm; }
+@media print { body { background: none; } .page { margin: 0; } }
+.page.gray { background: var(--g); }
+.page.dark { background: var(--c); color: #fff; }
+
+/* header */
+.top { position: absolute; left: 0; right: 0; top: 0; height: 15mm; background: var(--c); }
+.top .tab { position: absolute; left: 0; top: 0; height: 15mm; padding: 0 16mm 0 18mm; background: var(--y); clip-path: polygon(0 0, 100% 0, calc(100% - 7mm) 100%, 0 100%); display: flex; align-items: center; font-family: "BC"; font-weight: 800; font-size: 13pt; letter-spacing: .14em; text-transform: uppercase; color: var(--c); }
+.top .mark { position: absolute; right: 18mm; top: 3mm; height: 9mm; }
+.dark .top { background: #1d1d1d; }
+.ft { position: absolute; left: 18mm; right: 18mm; bottom: 8mm; display: flex; justify-content: space-between; align-items: center; font-size: 8.4pt; font-weight: 600; color: var(--mute); }
+.ft .no { font-family: "BC"; font-weight: 800; font-size: 14pt; color: var(--c); background: var(--y); padding: .5mm 3.6mm; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); }
+.dark .ft { color: #aaa; }
+
+/* type */
+h1 { font-family: "BC"; font-weight: 800; font-size: 40pt; line-height: .98; text-transform: uppercase; margin: 0; letter-spacing: .01em; color: var(--c); }
+h1 em { font-style: normal; color: var(--y); }
+.dark h1 { color: #fff; }
+.bar { width: 22mm; height: 2.2mm; background: var(--y); margin: 4mm 0 6mm; transform: skewX(-24deg); }
+.kick { font-family: "BC"; font-weight: 700; font-size: 12pt; letter-spacing: .22em; text-transform: uppercase; color: #b88800; margin-bottom: 2mm; }
+.dark .kick { color: var(--y); }
+p { margin: 0 0 4mm; line-height: 1.68; }
+.lead { font-size: 12pt; line-height: 1.6; color: #4a4740; font-weight: 500; }
+.dark .lead { color: #d8d6cf; }
+h2 { font-family: "BC"; font-weight: 800; font-size: 19pt; text-transform: uppercase; letter-spacing: .03em; margin: 0 0 3mm; display: flex; align-items: center; gap: 3mm; }
+h2::before { content: ""; width: 3mm; height: 7mm; background: var(--y); transform: skewX(-20deg); }
+.small { font-size: 9.2pt; color: var(--mute); line-height: 1.55; }
+
+/* blocks */
+.card { background: #fff; border-radius: 4mm; box-shadow: 0 .6mm 3mm rgba(0,0,0,.09); }
+.photo { background-size: cover; background-position: center; border-radius: 4mm; }
+.shadowy { box-shadow: 3mm 3mm 0 var(--y); }
+.stat { background: var(--c); color: #fff; padding: 5mm 4mm 4mm; border-radius: 3mm; border-bottom: 1.6mm solid var(--y); }
+.stat b { display: block; font-family: "BC"; font-weight: 800; font-size: 29pt; line-height: 1; color: var(--y); white-space: nowrap; }
+.stat span { display: block; font-size: 9pt; font-weight: 600; margin-top: 1.5mm; color: #e6e4dd; line-height: 1.35; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; }
+table.kv { width: 100%; border-collapse: collapse; font-size: 10.2pt; }
+table.kv td { padding: 2.3mm 0; border-bottom: .3mm solid var(--line); vertical-align: top; line-height: 1.4; }
+table.kv td:first-child { width: 31mm; color: var(--mute); font-weight: 600; padding-right: 3mm; }
+table.kv td:last-child { font-weight: 700; color: var(--c); }
+.chip { display: inline-block; font-weight: 700; font-size: 8.4pt; background: var(--yl); color: #7a5a00; padding: .8mm 3mm; border-radius: 10mm; }
+.fill { display: flex; flex-direction: column; height: 245mm; }
+.grow { flex: 1 1 0; min-height: 20mm; }
+
+/* cover */
+.cover { padding: 0; background: #1c1c1c; color: #fff; }
+.cover .bg { position: absolute; inset: 0; background-size: cover; background-position: center 35%; }
+.cover .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,20,.72) 0%, rgba(20,20,20,.05) 34%, rgba(20,20,20,0) 50%); }
+.cover .logo { position: absolute; left: 16mm; top: 14mm; width: 46mm; }
+.cover .badges { position: absolute; right: 16mm; top: 14mm; display: flex; gap: 3mm; align-items: center; }
+.cover .badges .c { width: 15mm; height: 15mm; border-radius: 50%; background: #fff; padding: 1.2mm; display: flex; } .cover .badges .c img { width: 100%; }
+.cover .badges .h { background: #fff; border-radius: 2mm; padding: 1.4mm 2mm; } .cover .badges .h img { height: 9.5mm; display: block; }
+.cover .slab2 { position: absolute; left: 0; right: 0; bottom: 0; height: 160mm; background: var(--c); clip-path: polygon(0 22%, 100% 0, 100% 100%, 0 100%); }
+.cover .slab { position: absolute; left: 0; right: 0; bottom: 0; height: 140mm; background: var(--y); clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%); }
+.cover .ttl { position: absolute; left: 18mm; right: 18mm; bottom: 24mm; color: var(--c); }
+.cover .ttl .k { font-family: "BC"; font-weight: 700; font-size: 14pt; letter-spacing: .3em; text-transform: uppercase; }
+.cover .ttl h1 { font-size: 68pt; line-height: .88; color: var(--c); margin: 2mm 0 5mm; }
+.cover .ttl .nm { font-family: "BC"; font-weight: 800; font-size: 24pt; letter-spacing: .06em; text-transform: uppercase; }
+.cover .ttl .tg { font-weight: 600; font-style: italic; font-size: 12pt; margin-top: 1mm; }
+.cover .strip { position: absolute; left: 0; right: 0; bottom: 0; height: 15mm; background: #1c1c1c; display: flex; justify-content: space-between; align-items: center; padding: 0 18mm; font-size: 9pt; font-weight: 600; letter-spacing: .08em; color: #ddd; }
+
+/* timeline */
+.tl { position: relative; margin-top: 6mm; }
+.tl::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2.4mm; background: var(--y); transform: translateX(-50%); border-radius: 2mm; }
+.tl .row { display: grid; grid-template-columns: 1fr 22mm 1fr; align-items: center; margin-bottom: 4.2mm; }
+.tl .yr { font-family: "BC"; font-weight: 800; font-size: 34pt; line-height: 1; color: var(--c); background: var(--y); padding: 1mm 6mm; clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%); display: inline-block; }
+.tl .nd { display: flex; justify-content: center; } .tl .nd i { width: 8mm; height: 8mm; border-radius: 50%; background: #fff; border: 2.2mm solid var(--c); display: block; }
+.tl .desc { background: #fff; border-radius: 3mm; box-shadow: 0 .6mm 3mm rgba(0,0,0,.1); padding: 4mm 5mm; border-left: 1.6mm solid var(--c); }
+.tl .desc b { display: block; font-size: 12.4pt; margin-bottom: .8mm; }
+.tl .desc span { display: block; font-size: 10.2pt; line-height: 1.5; color: #55524a; }
+.tl .L { text-align: right; } .tl .L .desc { border-left: none; border-right: 1.6mm solid var(--c); }
+.tl .yrbox.L { text-align: right; padding-right: 3mm; } .tl .yrbox.R { text-align: left; padding-left: 3mm; }
+
+/* product */
+.pg { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 6mm; }
+.pc { background: #fff; border-radius: 4mm; box-shadow: 0 .6mm 3mm rgba(0,0,0,.1); overflow: hidden; }
+.pc .im { height: 33mm; background-size: cover; background-position: center; position: relative; background-color: #eef0f0; }
+.pc .im.none { background: repeating-linear-gradient(135deg, #f3f2ee 0 3mm, #ebe9e2 3mm 6mm); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 9pt; color: #9a968a; }
+.pc .n { position: absolute; left: 3mm; top: 3mm; width: 9mm; height: 9mm; border-radius: 50%; background: var(--y); font-family: "BC"; font-weight: 800; font-size: 14pt; display: flex; align-items: center; justify-content: center; }
+.pc .bd { padding: 2.4mm 4mm 2.8mm; border-top: 1.6mm solid var(--y); }
+.pc h3 { font-family: "BC"; font-weight: 800; font-size: 17pt; text-transform: uppercase; margin: 0; line-height: 1.05; }
+.pc .id { font-size: 9pt; color: var(--mute); font-weight: 600; min-height: 4.4mm; margin-top: .5mm; }
+.pc .u { font-size: 9.8pt; line-height: 1.4; margin-top: 1.4mm; font-weight: 600; }
+.pc .u small { display: block; font-family: "BC"; font-weight: 700; font-size: 10pt; letter-spacing: .16em; text-transform: uppercase; color: #b88800; }
+
+.ft.light, .ft.light .no { color: #fff; } .ft.light .no { color: var(--c); }
+.ft.dk, .ft.dk span:not(.no) { color: #3b3200; }
+.ft.dk .no { background: var(--c); color: var(--y); }
+
+/* ---------- komponen tambahan ---------- */
+.ico { width: 8mm; height: 8mm; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.nb { flex: none; min-width: 11mm; height: 11mm; background: var(--c); color: var(--y); font-family: "BC"; font-weight: 800; font-size: 17pt; display: flex; align-items: center; justify-content: center; clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%); }
+.dark .nb { background: var(--y); color: var(--c); }
+.it { display: flex; gap: 4mm; align-items: center; background: #fff; border-radius: 3mm; box-shadow: 0 .6mm 3mm rgba(0,0,0,.09); padding: 3mm 4mm; font-size: 10.4pt; line-height: 1.45; font-weight: 600; }
+.dark .it { background: #363636; box-shadow: none; color: #f2f2ee; }
+.it .tx small { display: block; font-weight: 500; font-size: 9pt; color: #6a675f; margin-top: .4mm; }
+.dark .it .tx small { color: #b9b7b0; }
+.stage { font-family: "BC"; font-weight: 800; font-size: 13pt; letter-spacing: .18em; text-transform: uppercase; color: var(--c); background: var(--y); display: inline-block; padding: .6mm 5mm; clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%); margin: 0 0 2.4mm; }
+.cir { width: 14mm; height: 14mm; border-radius: 50%; background: var(--c); color: var(--y); display: flex; align-items: center; justify-content: center; flex: none; }
+.cir .ico { width: 7mm; height: 7mm; }
+.pill { display: inline-block; font-family: "BC"; font-weight: 700; font-size: 11.5pt; letter-spacing: .12em; text-transform: uppercase; background: var(--c); color: var(--y); padding: .4mm 3.6mm; border-radius: 10mm; }
+.dark .pill { background: var(--y); color: var(--c); }
+.bandp { position: relative; margin: 0 -18mm; background-size: cover; background-position: center; clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%); }
+.bandp .cap { position: absolute; left: 18mm; bottom: 15mm; background: var(--y); color: var(--c); font-family: "BC"; font-weight: 800; font-size: 14pt; text-transform: uppercase; letter-spacing: .06em; padding: 1mm 6mm; clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%); }
+table.lab { width: 100%; border-collapse: collapse; font-size: 9.6pt; background: #fff; border-radius: 3mm; overflow: hidden; box-shadow: 0 .6mm 3mm rgba(0,0,0,.09); }
+table.lab th { text-align: left; background: var(--c); color: #fff; font-family: "BC"; font-weight: 700; font-size: 11pt; letter-spacing: .1em; text-transform: uppercase; padding: 1.5mm 3mm; vertical-align: bottom; }
+table.lab th small { display: block; font-family: "PJS"; font-weight: 500; font-size: 8pt; letter-spacing: 0; text-transform: none; color: var(--y2); }
+table.lab td { padding: 1.35mm 3mm; border-bottom: .3mm solid var(--line); vertical-align: top; font-weight: 600; }
+table.lab tr:last-child td { border-bottom: none; }
+table.lab td small { display: block; font-weight: 500; color: var(--mute); font-size: 7.8pt; }
+.ok { color: #1c7a43; font-weight: 800; } .val { font-weight: 800; color: var(--c); }
+.sec { font-family: "BC"; font-weight: 800; font-size: 14pt; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 1.6mm; color: var(--c); }
+.sec b { color: #b88800; }
+.portrait { aspect-ratio: 1 / 0.92; background: linear-gradient(160deg, #3a3a3a, #232323); border-radius: 4mm; box-shadow: 2.4mm 2.4mm 0 var(--y); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.portrait span { font-family: "BC"; font-weight: 800; font-size: 46pt; color: var(--y); letter-spacing: .04em; }
+.cert { background: #fff; border-radius: 3mm; padding: 2.2mm; box-shadow: 0 .6mm 3mm rgba(0,0,0,.12); }
+.cert div { height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center top; }
+.tile { background: #fff; border-radius: 3mm; box-shadow: 0 .6mm 3mm rgba(0,0,0,.09); padding: 3.4mm 3mm; text-align: center; font-weight: 800; font-size: 10.4pt; min-height: 15mm; display: flex; align-items: center; justify-content: center; line-height: 1.25; }
+.tile.hl { background: var(--y); color: var(--c); font-family: "BC"; font-size: 17pt; letter-spacing: .04em; text-transform: uppercase; }
+.cr { display: grid; grid-template-columns: 14mm 30mm 1fr; align-items: center; gap: 3mm; padding: 3.2mm 0; border-bottom: .3mm solid #4a4a4a; }
+.cr .cir { background: var(--y); color: var(--c); width: 11mm; height: 11mm; }
+.cr .l { font-family: "BC"; font-weight: 700; font-size: 11.5pt; letter-spacing: .14em; text-transform: uppercase; color: var(--y); }
+.cr b { font-size: 11.4pt; font-weight: 700; line-height: 1.4; }
+.qr { background: #fff; padding: 3mm; border-radius: 3mm; display: inline-block; } .qr svg { width: 36mm; height: 36mm; display: block; }
+.chev { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1mm; }
+.chev > div { background: var(--y); clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%, 12% 50%); padding: 3mm 5mm 3mm 7mm; min-height: 23mm; }
+.chev > div:first-child { clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%); padding-left: 3mm; }
+.chev b { font-family: "BC"; font-weight: 800; font-size: 17pt; display: block; line-height: 1; }
+.chev span { font-size: 8.2pt; font-weight: 700; line-height: 1.3; display: block; margin-top: 1mm; }
+
+/* ================= v4: heksagon, maskot, infografis ================= */
+.hex { clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+/* header ringan menggantikan bar gelap */
+.top { background: transparent !important; height: 20mm; }
+.top .tab { background: transparent; clip-path: none; padding-left: 18mm; color: var(--c); font-size: 12pt; gap: 3mm; }
+.top .tab::before { content: ""; width: 5mm; height: 5.8mm; background: var(--y); clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+.dark .top .tab { color: #fff; }
+.top .tab::after { content: ""; width: 26mm; height: .5mm; background: var(--y); margin-left: 3mm; }
+.top .mark { top: 5mm; height: 10mm; right: 18mm; }
+.combs { position: absolute; right: -6mm; top: -8mm; width: 46mm; height: 46mm; pointer-events: none; }
+.ft .no { clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); width: 11mm; height: 12.6mm; padding: 0; display: flex; align-items: center; justify-content: center; font-size: 13pt; }
+
+/* cover sarang lebah */
+.cover4 { padding: 0; background: #1b1b1b; color: #fff; }
+.cover4 .cell { position: absolute; background-size: cover; background-position: center; }
+.cover4 .fade { position: absolute; left: 0; right: 0; top: 120mm; height: 90mm; background: linear-gradient(180deg, rgba(27,27,27,0), #1b1b1b 85%); }
+.cover4 .ttl { position: absolute; left: 18mm; right: 18mm; bottom: 26mm; }
+.cover4 .ttl h1 { font-size: 72pt; line-height: .86; color: #fff; margin: 3mm 0 5mm; }
+.cover4 .ttl h1 span { color: var(--y); }
+.cover4 .ttl .nm { font-family: "BC"; font-weight: 800; font-size: 23pt; letter-spacing: .08em; text-transform: uppercase; }
+.cover4 .ttl .tg { font-style: italic; font-weight: 600; color: var(--y); font-size: 12.5pt; margin-top: 1mm; }
+.cover4 .stripe { position: absolute; left: 0; right: 0; bottom: 0; height: 13mm; background: var(--y); color: var(--c); display: flex; justify-content: space-between; align-items: center; padding: 0 18mm; font-family: "BC"; font-weight: 800; font-size: 12pt; letter-spacing: .14em; text-transform: uppercase; }
+
+/* jalur perjalanan */
+.road { position: relative; height: 205mm; margin-top: 2mm; }
+.road svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.road .stop { position: absolute; width: 62mm; transform: translateX(-50%); text-align: center; }
+.road .badge { width: 25mm; height: 28.8mm; margin: 0 auto; background: var(--c); color: var(--y); display: flex; align-items: center; justify-content: center; font-family: "BC"; font-weight: 800; font-size: 21pt; }
+.road .stop.hi .badge { background: var(--y); color: var(--c); }
+.road .stop b { display: block; font-size: 11.6pt; margin-top: 2mm; }
+.road .stop span { display: block; font-size: 9.4pt; line-height: 1.45; color: #55524a; margin-top: .6mm; }
+
+/* papan alur produksi */
+.board { position: relative; height: 196mm; margin-top: 3mm; }
+.board svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.board .st { position: absolute; width: 38mm; height: 41mm; border-radius: 3.5mm; padding: 3mm 3.2mm; }
+.board .st.p1 { background: var(--y); color: var(--c); }
+.board .st.p2 { background: #3b3b3b; color: #fff; border: .4mm solid #555; }
+.board .st.p3 { background: #fff; color: var(--c); }
+.board .st .hn { width: 9.5mm; height: 11mm; background: var(--c); color: var(--y); font-family: "BC"; font-weight: 800; font-size: 13pt; display: flex; align-items: center; justify-content: center; }
+.board .st.p2 .hn { background: var(--y); color: var(--c); }
+.board .st b { display: block; font-size: 10.2pt; line-height: 1.2; margin-top: 2mm; }
+.board .st span { display: block; font-size: 8.3pt; line-height: 1.35; margin-top: 1mm; opacity: .85; }
+.legend { display: flex; gap: 3mm; align-items: center; font-family: "BC"; font-weight: 700; font-size: 11pt; letter-spacing: .1em; text-transform: uppercase; }
+.legend i { outline: .3mm solid #888; display: inline-block; width: 4mm; height: 4.6mm; margin-right: 1.5mm; vertical-align: -.8mm; clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+
+/* banner produk + peta potongan */
+.pban { position: absolute; left: 0; right: 0; top: 0; height: 92mm; background-size: cover; background-position: center; }
+.pban::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(22,22,22,.95) 0%, rgba(22,22,22,.82) 48%, rgba(22,22,22,.35) 100%); }
+.pban .in { position: absolute; z-index: 2; left: 18mm; top: 24mm; width: 92mm; color: #fff; }
+.pban .in h1 { color: #fff; font-size: 44pt; }
+.pban .in p { color: #ddd; font-size: 10.2pt; line-height: 1.5; margin: 3mm 0 0; }
+.cutmap { position: absolute; z-index: 2; right: 10mm; top: 22mm; width: 92mm; }
+.cutmap .lbl { position: absolute; right: 2mm; bottom: -3mm; font-family: "BC"; font-weight: 700; font-size: 10pt; letter-spacing: .14em; text-transform: uppercase; color: var(--y); }
+.pg3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+.pg3 .pc .im { height: 33mm; }
+.pg3 .pc .n { border-radius: 0; width: 8.6mm; height: 10mm; clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); font-size: 12pt; }
+.pg3 .pc h3 { font-size: 15.5pt; }
+.pg3 .pc .u { font-size: 9.2pt; }
+.tip { display: flex; align-items: flex-end; gap: 3mm; }
+.tip .bub { position: relative; background: var(--y); color: var(--c); border-radius: 4mm; padding: 3.5mm 5mm; font-weight: 700; font-size: 10.4pt; line-height: 1.4; }
+.tip .bub::after { content: ""; position: absolute; right: -4mm; bottom: 5mm; border: 2.4mm solid transparent; border-left: 4mm solid var(--y); }
+
+.ban .top .tab { color: #fff; } .ban .top .tab::after { background: var(--y); }
+.ft.dk .no { background: var(--c); color: var(--y); }
+</style></head><body>
+<section class="page cover4">
+  <div class="cell hex" style="left:-15.9mm; top:-24.9mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/cattle-grass.jpg')"></div><div class="cell hex" style="left:44.1mm; top:-24.9mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/ribeye-pair.jpg')"></div><div class="cell hex" style="left:104.1mm; top:-24.9mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/cattle-fence.jpg')"></div><div class="cell hex" style="left:164.1mm; top:-24.9mm; width:57.8mm; height:67.08200000000001mm; background:var(--y)"></div><div class="cell hex" style="left:14.1mm; top:27.06150000000001mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/steak-board.jpg')"></div><div class="cell hex" style="left:74.1mm; top:27.06150000000001mm; width:57.8mm; height:67.08200000000001mm; background:#1b1b1b; display:flex; align-items:center; justify-content:center"><img src="../assets/logo/wijaya-yellow.png" style="width:42mm"></div><div class="cell hex" style="left:134.1mm; top:27.06150000000001mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/rph-gate.jpg')"></div><div class="cell hex" style="left:194.1mm; top:27.06150000000001mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/meat-pile.jpg')"></div><div class="cell hex" style="left:-15.9mm; top:79.02300000000001mm; width:57.8mm; height:67.08200000000001mm; background:var(--y)"></div><div class="cell hex" style="left:44.1mm; top:79.02300000000001mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/team-white.jpg')"></div><div class="cell hex" style="left:104.1mm; top:79.02300000000001mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/cattle-yard.jpg')"></div><div class="cell hex" style="left:164.1mm; top:79.02300000000001mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/tbone-dark.jpg')"></div><div class="cell hex" style="left:14.1mm; top:130.98450000000003mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/beef-cut-board.jpg')"></div><div class="cell hex" style="left:74.1mm; top:130.98450000000003mm; width:57.8mm; height:67.08200000000001mm; background:#2c2c2c"></div><div class="cell hex" style="left:134.1mm; top:130.98450000000003mm; width:57.8mm; height:67.08200000000001mm; background-image:url('../assets/img/cattle-pen.jpg')"></div><div class="cell hex" style="left:194.1mm; top:130.98450000000003mm; width:57.8mm; height:67.08200000000001mm; background:var(--y)"></div>
+  <div class="fade"></div>
+  <div class="ttl">
+    <div class="kick" style="color:var(--y)">Edisi 2026</div>
+    <h1>Company<br><span>Profile</span></h1>
+    <div class="nm">PT. Santi Wijaya Meat</div>
+    <div class="tg">“Committed to Meeting Your Need”</div>
+  </div>
+  <div style="position:absolute; right:18mm; bottom:28mm; display:flex; gap:3mm; align-items:center">
+    <div style="width:15mm; height:15mm; border-radius:50%; background:#fff; padding:1.2mm; display:flex"><img src="../assets/logo/nkv-rph.png" style="width:100%"></div>
+    <div style="width:15mm; height:15mm; border-radius:50%; background:#fff; padding:1.2mm; display:flex"><img src="../assets/logo/nkv-gudang.png" style="width:100%"></div>
+    <div style="background:#fff; border-radius:2mm; padding:1.4mm 2mm"><img src="../assets/logo/halal.png" style="height:9.5mm; display:block"></div>
+  </div>
+  <div class="stripe"><span>RPH Jonggol · Kabupaten Bogor</span><span>www.wijayameat.co.id</span></div>
+</section>
+
+<section class="page ">
+  <div class="top"><div class="tab">Kata Pengantar</div><img class="mark" src="../assets/logo/wijaya-yellow.png" alt=""></div>
+  
+  <svg style="position:absolute; left:-6mm; top:34mm; width:100mm; height:115.5mm; overflow:visible" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="none" stroke="#f7b500" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg>
+  <div class="hex" style="position:absolute; left:-16mm; top:24mm; width:100mm; height:115.5mm; background:url('../assets/img/owner-farm.jpg') 45% 40%/cover"></div>
+  <div style="position:absolute; left:18mm; top:156mm; width:62mm">
+    <div style="background:var(--c); color:#fff; padding:4mm 5mm; border-radius:3mm; border-left:2mm solid var(--y)">
+      <div style="font-family:'BC'; font-weight:800; font-size:16pt; text-transform:uppercase; line-height:1.05">Santi Wijayanti Lewis</div>
+      <div style="font-size:9.2pt; color:#ddd; font-weight:600; margin-top:1mm">Pemilik & Direktur Utama</div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3mm; margin-top:4mm">
+      <div class="stat" style="padding:3.4mm"><b style="font-size:24pt">2014</b><span>CV Wijaya Meat</span></div>
+      <div class="stat" style="padding:3.4mm"><b style="font-size:24pt">2020</b><span>Resmi PT</span></div>
+    </div>
+  </div>
+  <div style="position:absolute; left:92mm; right:18mm; top:30mm">
+    <div class="kick">Sambutan</div>
+    <h1 style="font-size:36pt">Selamat datang di <em>Wijaya Meat</em></h1><div class="bar"></div>
+    <p>Salam hormat,</p>
+    <p>Selamat datang di <b>PT. Santi Wijaya Meat</b>, tempat di mana komitmen kami untuk memenuhi kebutuhan Anda menjadi prioritas utama.</p>
+    <p>Perjalanan kami dimulai tahun 2014 sebagai CV. Wijaya Meat. Pada tahun 2020 kami resmi menjadi PT. Santi Wijaya Meat, didukung rumah potong dan cold storage bersertifikat NKV Tingkat I serta jaminan halal.</p>
+    <p>Kami bangga dipercaya memasok daging sapi berkualitas untuk jaringan ritel modern, hotel, restoran, dan mitra industri. Slogan kami, <i>“Committed to Meeting Your Need”</i>, adalah tekad untuk selalu hadir dengan solusi yang tepat dan mutu yang konsisten.</p>
+    <p>Terima kasih atas kepercayaan Anda.</p>
+  </div>
+  <div style="position:absolute; left:0; right:0; bottom:0; height:62mm; background:var(--y); clip-path:polygon(0 24%, 100% 0, 100% 100%, 0 100%); padding:14mm 18mm 20mm; display:flex; align-items:center; gap:8mm">
+    <div style="font-family:'BC'; font-weight:800; font-size:64pt; line-height:.6; color:var(--c)">“</div>
+    <div style="font-family:'BC'; font-weight:800; font-size:22pt; line-height:1.12; text-transform:uppercase; color:var(--c)">Daging sapi berkualitas adalah kunci terciptanya hidangan terbaik.</div>
+  </div>
+
+  <div class="ft dk"><span>PT. Santi Wijaya Meat</span><span class="no">02</span><span>Company Profile 2026</span></div>
+</section>
+
+<section class="page gray">
+  <div class="top"><div class="tab">Sejarah Singkat</div><img class="mark" src="../assets/logo/wijaya-yellow.png" alt=""></div>
+  
+  <div class="kick">Sejak 2014</div>
+  <h1>Perjalanan <em>kami</em></h1><div class="bar" style="margin-bottom:2mm"></div>
+  <div class="road">
+    <svg viewBox="0 0 174 205" preserveAspectRatio="none">
+      <path d="M 4 20 H 160 A 26 26 0 0 1 160 72 H 14 A 26 26 0 0 0 14 124 H 160 A 26 26 0 0 1 160 176 H 44" fill="none" stroke="#2a2a2a" stroke-width="7" stroke-linecap="round"/>
+      <path d="M 4 20 H 160 A 26 26 0 0 1 160 72 H 14 A 26 26 0 0 0 14 124 H 160 A 26 26 0 0 1 160 176 H 44" fill="none" stroke="#f7b500" stroke-width=".7" stroke-dasharray="3 2.4"/>
+      <polygon points="44,170 32,176 44,182" fill="#f7b500"/>
+    </svg>
+    <div class="stop hi" style="left:38mm; top:5.6mm"><div class="badge hex">2014</div><b>CV Wijaya Meat</b><span>Awal perjalanan sebagai penyedia daging sapi berkualitas.</span></div><div class="stop hi" style="left:118mm; top:5.6mm"><div class="badge hex">2020</div><b>Resmi menjadi PT</b><span>Akta Pendirian No. 16 (18 April 2020) dan NIB terbit.</span></div><div class="stop " style="left:136mm; top:57.6mm"><div class="badge hex">2021</div><b>NKV Gudang Tingkat I</b><span>Cold storage memperoleh NKV CS-3201170-027.</span></div><div class="stop " style="left:56mm; top:57.6mm"><div class="badge hex">2023</div><b>NKV RPH Tingkat I</b><span>RPHR Jonggol memperoleh NKV RPHR-3201170-007.</span></div><div class="stop " style="left:38mm; top:109.6mm"><div class="badge hex">2024</div><b>Penguatan manajemen</b><span>Komisaris baru bergabung; Tanda Daftar Gudang terbit.</span></div><div class="stop " style="left:118mm; top:109.6mm"><div class="badge hex">2025</div><b>Surveilans NKV</b><span>Gudang dan RPH mempertahankan predikat Tingkat I.</span></div><div class="stop hi" style="left:136mm; top:161.6mm"><div class="badge hex">2026</div><b>Sertifikat Halal RPH</b><span>Halal RPH ID00110015321510124.</span></div>
+    <div style="position:absolute; left:2mm; top:171mm; font-family:'BC'; font-weight:800; font-size:15pt; text-transform:uppercase; color:#b88800; line-height:1">Terus<br>melaju</div>
+  </div>
+
+  <div class="ft "><span>PT. Santi Wijaya Meat</span><span class="no">03</span><span>Company Profile 2026</span></div>
+</section>
+
+<section class="page dark">
+  <div class="top"><div class="tab">Proses Produksi</div><img class="mark" src="../assets/logo/wijaya-yellow.png" alt=""></div>
+  
+  <div class="kick">16 tahap</div>
+  <h1 style="font-size:34pt">Dari kandang hingga <em>meja Anda</em></h1><div class="bar" style="margin:3mm 0 3mm"></div>
+  <div class="legend"><span><i style="background:var(--y)"></i>Penerimaan</span><span><i style="background:#3b3b3b; outline:.3mm solid #777"></i>Penyembelihan</span><span><i style="background:#fff"></i>Pasca-potong</span></div>
+  <div class="board">
+    <svg viewBox="0 0 174 196" preserveAspectRatio="none"><polyline points="19,20.5 64.33,20.5 109.66,20.5 154.99,20.5 154.99,72.16 109.66,72.16 64.33,72.16 19,72.16 19,123.82 64.33,123.82 109.66,123.82 154.99,123.82 154.99,175.48 109.66,175.48 64.33,175.48 19,175.48" fill="none" stroke="#f7b500" stroke-width=".9"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(41.665 20.5) rotate(0)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(86.995 20.5) rotate(0)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(132.325 20.5) rotate(0)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(154.99 46.33) rotate(90)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(132.325 72.16) rotate(180)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(86.995 72.16) rotate(180)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(41.665 72.16) rotate(180)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(19 97.99) rotate(90)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(41.665 123.82) rotate(0)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(86.995 123.82) rotate(0)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(132.325 123.82) rotate(0)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(154.99 149.64999999999998) rotate(90)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(132.325 175.48) rotate(180)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(86.995 175.48) rotate(180)"/><polygon points="-2.4,-2.6 2.6,0 -2.4,2.6" fill="#f7b500" transform="translate(41.665 175.48) rotate(180)"/></svg>
+    <div class="st p1" style="left:0mm; top:0mm"><div class="hn hex">01</div><b>Penerimaan sapi</b><span>Sapi diterima dan diperiksa sesuai standar jaminan halal.</span></div><div class="st p1" style="left:45.33mm; top:0mm"><div class="hn hex">02</div><b>Pengistirahatan</b><span>Sapi diistirahatkan agar tenang dan tidak stres sebelum dipotong.</span></div><div class="st p1" style="left:90.66mm; top:0mm"><div class="hn hex">03</div><b>Pemandian</b><span>Sapi dibersihkan sebelum masuk tahap berikutnya.</span></div><div class="st p1" style="left:135.99mm; top:0mm"><div class="hn hex">04</div><b>Penggiringan</b><span>Oleh stockman dengan prinsip kesejahteraan hewan.</span></div><div class="st p2" style="left:135.99mm; top:51.66mm"><div class="hn hex">05</div><b>Stunning box</b><span>Sapi masuk jalur khusus menuju stunning box.</span></div><div class="st p2" style="left:90.66mm; top:51.66mm"><div class="hn hex">06</div><b>Stunning</b><span>Dilakukan stunner bersertifikat secara aman.</span></div><div class="st p2" style="left:45.33mm; top:51.66mm"><div class="hn hex">07</div><b>Penyembelihan</b><span>Oleh juru sembelih halal (Juleha) bersertifikat.</span></div><div class="st p2" style="left:0mm; top:51.66mm"><div class="hn hex">08</div><b>Waktu jeda</b><span>5–10 menit untuk memastikan proses berjalan sempurna.</span></div><div class="st p2" style="left:0mm; top:103.32mm"><div class="hn hex">09</div><b>Pengangkatan</b><span>Karkas diangkat dengan pengait.</span></div><div class="st p2" style="left:45.33mm; top:103.32mm"><div class="hn hex">10</div><b>Pemotongan kepala & kaki</b><span>Dilakukan dengan presisi.</span></div><div class="st p2" style="left:90.66mm; top:103.32mm"><div class="hn hex">11</div><b>Pengulitan & pemeriksaan</b><span>Pemeriksaan postmortem karkas dan jeroan.</span></div><div class="st p2" style="left:135.99mm; top:103.32mm"><div class="hn hex">12</div><b>Pembelahan karkas</b><span>Menggunakan splitting saw.</span></div><div class="st p3" style="left:135.99mm; top:154.98mm"><div class="hn hex">13</div><b>Pelayuan</b><span>Penimbangan, tenderstretch, dan pelayuan karkas.</span></div><div class="st p3" style="left:90.66mm; top:154.98mm"><div class="hn hex">14</div><b>Boning</b><span>Pemisahan daging dari tulang dan pemeriksaan mutu.</span></div><div class="st p3" style="left:45.33mm; top:154.98mm"><div class="hn hex">15</div><b>Cold storage</b><span>Penimbangan dan penyimpanan sesuai suhu chill atau frozen.</span></div><div class="st p3" style="left:0mm; top:154.98mm"><div class="hn hex">16</div><b>Pembekuan & pengiriman</b><span>Blast freezer, lalu dikirim dengan armada berpendingin.</span></div>
+  </div>
+
+  <div class="ft "><span>PT. Santi Wijaya Meat</span><span class="no">04</span><span>Company Profile 2026</span></div>
+</section>
+
+<section class="page gray ban">
+  <div class="top"><div class="tab">Katalog Produk · 1/5</div><img class="mark" src="../assets/logo/wijaya-yellow.png" alt=""></div>
+  
+  <div class="pban" style="background-image:url('../assets/img/ribeye-pair.jpg')">
+    <div class="in"><div class="kick" style="color:var(--y)">Prime Cuts</div><h1>Prime Cuts</h1><div class="bar" style="margin:3mm 0 0"></div><p>Potongan premium dari bagian tertentu sapi: empuk, juicy, dan kaya rasa. Umumnya dijadikan steak.</p></div>
+    <div class="cutmap"><img src="../assets/img/cow-diagram.jpg" style="width:100%; display:block; border-radius:2mm">
+  <svg viewBox="0 0 716 515" style="position:absolute; inset:0; width:100%; height:100%"><polygon points="300,40 355,42 375,110 385,185 300,185 304,110" fill="rgba(247,181,0,.62)" stroke="#f7b500" stroke-width="3"/><polygon points="355,42 430,42 450,110 455,185 385,185 375,110" fill="rgba(247,181,0,.62)" stroke="#f7b500" stroke-width="3"/><polygon points="430,42 510,40 540,100 550,185 455,185 450,110" fill="rgba(247,181,0,.62)" stroke="#f7b500" stroke-width="3"/></svg>
+  <div class="lbl">◆ Asal potongan</div></div>
+  </div>
+  <div style="position:absolute; left:18mm; right:18mm; top:98mm">
+    <div class="pg3">
+      <div class="pc">
+        <div class="im none"><div class="n">1</div>FOTO MENYUSUL</div>
+        <div class="bd"><h3>Tenderloin</h3><div class="id">Has Dalam</div><div class="u"><small>Cocok untuk</small>Tenderloin steak, filet mignon, beef wellington</div></div></div><div class="pc">
+        <div class="im" style="background-image:url('../assets/products/striploin-whole.jpg')"><div class="n">2</div></div>
+        <div class="bd"><h3>Striploin Whole</h3><div class="id">Has Luar Utuh</div><div class="u"><small>Cocok untuk</small>Steak, grill, BBQ, panggang utuh</div></div></div><div class="pc">
+        <div class="im" style="background-image:url('../assets/products/striploin-cut.jpg')"><div class="n">3</div></div>
+        <div class="bd"><h3>Striploin Cut</h3><div class="id">Has Luar Potongan</div><div class="u"><small>Cocok untuk</small>Steak slice, grill, pan-seared</div></div></div><div class="pc">
+        <div class="im" style="background-image:url('../assets/products/cuberoll.jpg')"><div class="n">4</div></div>
+        <div class="bd"><h3>Cuberoll</h3><div class="id">Ribeye Roll</div><div class="u"><small>Cocok untuk</small>Ribeye steak, roast beef, grill premium</div></div></div><div class="pc">
+        <div class="im none"><div class="n">5</div>FOTO MENYUSUL</div>
+        <div class="bd"><h3>Spencer Roll</h3><div class="id">Iga Atas / Ribeye Roll</div><div class="u"><small>Cocok untuk</small>Steak, grill, yakiniku, sukiyaki, hotpot</div></div></div><div class="pc">
+        <div class="im none"><div class="n">6</div>FOTO MENYUSUL</div>
+        <div class="bd"><h3>New York Rib Eye</h3><div class="id">&nbsp;</div><div class="u"><small>Cocok untuk</small>Steak, grill, pan-seared</div></div></div>
+    </div>
+    <div class="tip" style="justify-content:flex-end; margin-top:2mm; margin-right:-4mm">
+      <div class="bub" style="max-width:96mm">Butuh potongan atau ukuran khusus? Kami melayani <i>product by request</i> sesuai kebutuhan Anda.</div>
+      <img src="../assets/logo/mascot.png" style="height:36mm">
+    </div>
+  </div>
+
+  <div class="ft "><span>PT. Santi Wijaya Meat</span><span class="no">05</span><span>Company Profile 2026</span></div>
+</section>
+
+<section class="page dark">
+  <div class="top"><div class="tab">Kontak</div><img class="mark" src="../assets/logo/wijaya-yellow.png" alt=""></div>
+  
+  <div class="kick">Hubungi kami</div>
+  <h1 style="font-size:46pt">Mari bekerja <em>sama</em></h1><div class="bar"></div>
+  <div style="margin-top:1mm">
+    <div class="cr"><span class="cir"><svg class="ico" style="width:5.5mm; height:5.5mm" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span><span class="l">Call center</span><b>+62 813-6006-959</b></div><div class="cr"><span class="cir"><svg class="ico" style="width:5.5mm; height:5.5mm" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="l">Email</span><b>official@wijayameat.co.id</b></div><div class="cr"><span class="cir"><svg class="ico" style="width:5.5mm; height:5.5mm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span class="l">Website</span><b>www.wijayameat.co.id</b></div><div class="cr"><span class="cir"><svg class="ico" style="width:5.5mm; height:5.5mm" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="l">Kantor</span><b>Perum Asabri Blok B No. 20, RT 001/RW 005, Desa Sukasirna, Kec. Jonggol, Kab. Bogor, Jawa Barat 16830</b></div><div class="cr"><span class="cir"><svg class="ico" style="width:5.5mm; height:5.5mm" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="l">RPH & produksi</span><b>Jl. SMPN 01 Jonggol, Kp. Menan RT 04/RW 01, Desa Sukamaju, Kec. Jonggol, Kab. Bogor, Jawa Barat</b></div>
+  </div>
+  <div style="position:absolute; left:18mm; bottom:26mm; display:flex; gap:7mm">
+    <div style="text-align:center"><div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h29v29H0z"/><path stroke="#2a2a2a" d="M0 0.5h7m1 0h1m1 0h6m2 0h1m3 0h7M0 1.5h1m5 0h1m1 0h1m3 0h4m3 0h1m2 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h2m1 0h4m3 0h2m2 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m2 0h4m1 0h2m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h3m2 0h1m1 0h1m2 0h2m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m3 0h1m2 0h2m7 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M11 7.5h2m1 0h1m4 0h1M0 8.5h1m2 0h6m1 0h1m1 0h6m1 0h3m2 0h1m1 0h3M5 9.5h1m1 0h1m3 0h2m1 0h1m3 0h2m3 0h2m1 0h2M0 10.5h1m1 0h1m3 0h1m3 0h2m2 0h1m7 0h2m2 0h1M0 11.5h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m1 0h1m4 0h1m2 0h1m2 0h1M1 12.5h1m1 0h1m2 0h1m1 0h2m2 0h3m4 0h2m1 0h2m4 0h1M4 13.5h1m2 0h1m3 0h2m8 0h2m1 0h5M1 14.5h2m1 0h3m4 0h1m2 0h2m3 0h3m2 0h1m1 0h1m1 0h1M0 15.5h1m2 0h3m2 0h1m4 0h2m1 0h1m2 0h6m1 0h1m1 0h1M0 16.5h3m2 0h4m1 0h1m4 0h1m4 0h2m3 0h1M0 17.5h5m2 0h1m1 0h2m1 0h1m4 0h4m3 0h1m1 0h2M0 18.5h8m1 0h1m1 0h4m1 0h2m1 0h1m4 0h2m2 0h1M0 19.5h2m3 0h1m1 0h1m1 0h1m2 0h2m1 0h2m2 0h1m1 0h2m2 0h2M0 20.5h2m1 0h2m1 0h2m4 0h2m4 0h1m1 0h8M8 21.5h2m1 0h1m1 0h1m2 0h3m1 0h1m3 0h2M0 22.5h7m1 0h2m1 0h1m1 0h1m1 0h2m2 0h2m1 0h1m1 0h2M0 23.5h1m5 0h1m1 0h1m1 0h4m2 0h1m1 0h3m3 0h1m2 0h1M0 24.5h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h7m1 0h1M0 25.5h1m1 0h3m1 0h1m1 0h1m1 0h5m1 0h1m1 0h1m2 0h1m5 0h1M0 26.5h1m1 0h3m1 0h1m3 0h1m2 0h1m2 0h1m1 0h1m4 0h2m1 0h3M0 27.5h1m5 0h1m2 0h3m2 0h2m3 0h1m2 0h1m2 0h2m1 0h1M0 28.5h7m1 0h1m2 0h2m3 0h5m1 0h3"/></svg>
+</div><div style="font-family:'BC'; font-weight:800; font-size:13pt; text-transform:uppercase; margin-top:2mm">Katalog lengkap</div></div>
+    <div style="text-align:center"><div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h25v25H0z"/><path stroke="#2a2a2a" d="M0 0.5h7m2 0h1m3 0h1m2 0h1m1 0h7M0 1.5h1m5 0h1m4 0h1m2 0h3m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m3 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m3 0h1m1 0h2m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m1 0h1m3 0h1M0 8.5h1m1 0h5m2 0h2m2 0h4m1 0h5M2 9.5h3m2 0h3m1 0h3m2 0h1m2 0h1m3 0h1M1 10.5h1m1 0h1m2 0h6m1 0h4m3 0h2m1 0h2M0 11.5h1m1 0h2m3 0h2m2 0h1m2 0h1m1 0h3m5 0h1M1 12.5h3m1 0h2m2 0h1m1 0h1m1 0h2m2 0h2m1 0h1m1 0h3M0 13.5h1m1 0h2m1 0h1m4 0h1m1 0h2m3 0h1m1 0h1m1 0h1m1 0h1M0 14.5h1m1 0h3m1 0h1m2 0h1m4 0h8m1 0h2M0 15.5h1m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h2m2 0h3m3 0h1M0 16.5h1m5 0h4m2 0h3m1 0h5m1 0h1M8 17.5h1m5 0h1m1 0h1m3 0h2M0 18.5h7m2 0h4m3 0h1m1 0h1m1 0h1m1 0h3M0 19.5h1m5 0h1m1 0h2m1 0h1m4 0h1m3 0h2m2 0h1M0 20.5h1m1 0h3m1 0h1m1 0h13m1 0h1M0 21.5h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h2m2 0h1m1 0h5M0 22.5h1m1 0h3m1 0h1m1 0h3m2 0h1m2 0h1m4 0h2m1 0h1M0 23.5h1m5 0h1m2 0h3m3 0h3m1 0h3m2 0h1M0 24.5h7m1 0h7m4 0h6"/></svg>
+</div><div style="font-family:'BC'; font-weight:800; font-size:13pt; text-transform:uppercase; margin-top:2mm">Company profile</div></div>
+  </div>
+  <div class="hex" style="position:absolute; right:-14mm; bottom:-12mm; width:104mm; height:120mm; background:var(--y)"></div>
+  <img src="../assets/logo/mascot.png" style="position:absolute; right:10mm; bottom:14mm; height:96mm">
+  <div class="tip" style="position:absolute; right:68mm; bottom:104mm"><div class="bub" style="max-width:52mm">Siap melayani kebutuhan daging sapi Anda!</div></div>
+
+  <div class="ft "><span>PT. Santi Wijaya Meat</span><span class="no">06</span><span>Company Profile 2026</span></div>
+</section></body></html>

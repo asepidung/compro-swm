@@ -12,7 +12,7 @@ Bahasa kerja: Indonesia (user biasa dipanggil "bro"). Isi compro dan web: bahasa
 | Path | Isi |
 |---|---|
 | `data/*.json` | **Sumber tunggal isi.** Ubah di sini, bukan di halaman. `company`, `products`, `clients`, `lab`, `process`, `awards` |
-| `src/v3/` | Desain utama compro (`pages.mjs`, `styles.css`). `src/v2/` dan `src/v1/` = arsip |
+| `src/v3/` | Desain utama compro (`pages.mjs`, `styles.css`). `src/v4/` = contoh 6 halaman gaya heksagon + maskot (menunggu keputusan user). `src/v2/` dan `src/v1/` = arsip |
 | `assets/` | `logo/`, `img/`, `products/<slug>.jpg`, `team/<slug>.jpg`, `cert/` (scan legalitas), `fonts/` |
 | `build.mjs` | HTML ke PDF lewat Chromium (Playwright). `npm run build` ke `dist/compro.pdf` |
 | `dist/` | PDF terbaru (di-commit supaya mudah dilihat user) |
